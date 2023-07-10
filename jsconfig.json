@@ -1,0 +1,21 @@
+{
+	"compilerOptions": {
+		"target": "es2017",
+		"baseUrl": "."
+	},
+	"include": [
+		"app",
+		"OLD",
+		"styles",
+		"utils",
+		"components",
+		"hooks",
+		"context",
+		"public",
+	],
+	"exclude": [
+		"node_modules/**/*",
+		"dist/*",
+		"package.json"
+	]
+}

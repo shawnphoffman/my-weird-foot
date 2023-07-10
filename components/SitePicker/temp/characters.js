@@ -1,0 +1,96 @@
+const characterArray = {
+	Akuma: {
+		name: 'Akuma',
+		id: 'akuma',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/akuma.png',
+		imgSrc: i2,
+		disabled: true,
+	},
+	Balrog: {
+		name: 'Balrog',
+		id: 'balrog',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/balrog.png',
+		imgSrc: i1,
+	},
+	Bison: {
+		name: 'Dickbutt',
+		id: 'bison',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/bison.png',
+		imgSrc: i4,
+	},
+	Blanka: {
+		name: 'Blanka',
+		id: 'blanka',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/blanka.png',
+		imgSrc: i3,
+		disabled: true,
+	},
+	Cammy: {
+		name: 'Cammy',
+		id: 'cammy',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/cammy.png',
+		imgSrc: i5,
+		disabled: true,
+	},
+	'Chun Li': {
+		name: 'Chun Li',
+		id: 'chunli',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/chunli.png',
+		imgSrc: i6,
+		disabled: true,
+	},
+	Dhalsim: {
+		name: 'Dhalsim',
+		id: 'dhalsim',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/dhalsim.png',
+		imgSrc: i7,
+		disabled: true,
+	},
+	'E. Honda': {
+		name: 'E. Honda',
+		id: 'ehonda',
+		// imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ehonda.png',
+		imgSrc: i8,
+		disabled: true,
+	},
+	// 'Evil Ryu': {
+	// 	name: 'Evil Ryu',
+	// 	id: 'evilryu',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ryu.pnevilg.png',
+	// },
+	// Guile: {
+	// 	name: 'Guile',
+	// 	id: 'guile',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/guile.png',
+	// },
+	// Ken: {
+	// 	name: 'Ken',
+	// 	id: 'ken',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ken.png',
+	// },
+	// Ryu: {
+	// 	name: 'Ryu',
+	// 	id: 'ryu',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/ryu.png',
+	// },
+	// Sagat: {
+	// 	name: 'Sagat',
+	// 	id: 'sagat',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/sagat.png',
+	// },
+	// 'T-Hawk': {
+	// 	name: 'T-Hawk',
+	// 	id: 'thawk',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/t-hawk.png',
+	// },
+	// Vega: {
+	// 	name: 'Vega',
+	// 	id: 'vega',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/vega.png',
+	// },
+	// Zangief: {
+	// 	name: 'Zangief',
+	// 	id: 'zangief',
+	// 	imgSrc: 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/zangief.png',
+	// },
+}
