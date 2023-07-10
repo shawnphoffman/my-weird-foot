@@ -1,3 +1,5 @@
+'use client'
+
 import { styled } from 'linaria/react'
 
 const smallBreakpoint = '420px'

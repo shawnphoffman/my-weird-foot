@@ -1,19 +1,6 @@
 import { memo, useMemo } from 'react'
-import { styled } from 'linaria/react'
 
-const Button = styled.a`
-	background-color: purple;
-	padding: 1em 2em;
-	font-size: 24px;
-	font-weight: bold;
-	border-radius: 12px;
-	border: 2px solid white;
-`
-
-const Container = styled.div`
-	display: flex;
-	justify-content: center;
-`
+import styles from './GoButton.module.css'
 
 const GoButton = ({ i }) => {
 	const destination = useMemo(() => {
@@ -33,9 +20,11 @@ const GoButton = ({ i }) => {
 	if (!i) return null
 
 	return (
-		<Container>
-			<Button href={destination.href}>Visit {destination.title}</Button>
-		</Container>
+		<div className={styles.container}>
+			<a className={styles.button} href={destination.href}>
+				Visit {destination.title}
+			</a>
+		</div>
 	)
 }
 

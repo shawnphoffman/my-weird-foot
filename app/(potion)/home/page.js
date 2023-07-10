@@ -1,13 +1,14 @@
 import { memo } from 'react'
 
-import { PageDescription, PageDetails } from 'styles/common'
+// import { PageDescription, PageDetails } from 'styles/common'
 
 const Home = ({}) => {
 	return (
 		<>
-			<PageDetails>
+			<h1>High Potion Home</h1>
+			{/* <PageDetails>
 				<PageDescription>High Potion Home</PageDescription>
-			</PageDetails>
+			</PageDetails> */}
 		</>
 	)
 }
