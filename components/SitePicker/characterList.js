@@ -1,12 +1,13 @@
 import bh from './images/cover_bh.jpg'
 import hp from './images/cover_hp.jpg'
-import i1 from './temp/1.png'
-import i2 from './temp/2.png'
+import i7 from './images/dead_tifa.jpg'
+// import i1 from './temp/1.png'
+// import i2 from './temp/2.png'
+import i2 from './images/dead_turgle.jpg'
 import i3 from './temp/3.png'
-import i4 from './temp/4.png'
+// import i4 from './temp/4.png'
 import i5 from './temp/5.png'
 import i6 from './temp/6.png'
-import i7 from './temp/7.png'
 import i8 from './temp/8.png'
 
 const characterArray = {

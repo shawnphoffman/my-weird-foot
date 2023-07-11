@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+/* @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700'); */
 
 html {
 	background-color: navy;
@@ -59,7 +59,7 @@ html.hp {
 	padding: 0;
 }
 .character__img {
-	filter: grayscale(0.84);
+	filter: grayscale(0.2);
 	height: 200px;
 }
 .character.active {
