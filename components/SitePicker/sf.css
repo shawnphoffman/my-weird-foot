@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
 html {
-	background-color: blue;
+	background-color: navy;
 }
 html.bh {
-	background-color: darkred;
+	background-color: rgb(180, 42, 0);
+	/* background-color: darkred; */
+	/* background-color: rgb(63, 39, 4); */
 }
 html.hp {
 	background-color: darkgreen;

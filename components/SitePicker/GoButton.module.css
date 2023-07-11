@@ -10,4 +10,10 @@
 	font-weight: bold;
 	border-radius: 12px;
 	border: 2px solid white;
+	display: flex;
+	flex-direction: column;
+
+	&:hover {
+		background-color: blue;
+	}
 }
