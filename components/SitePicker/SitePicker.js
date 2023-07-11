@@ -20,6 +20,10 @@ const SitePicker = () => {
 			if ([37, 39].includes(event.keyCode)) {
 				event.preventDefault()
 				setSelectedIndex(selectedIndex === 1 ? 2 : 1)
+				return
+			}
+			if (event.key === 'Enter' && !!selectedIndex) {
+				window.location = selectedIndex === 1 ? 'https://blueharvest.rocks' : '/home'
 			}
 		},
 		[selectedIndex]
