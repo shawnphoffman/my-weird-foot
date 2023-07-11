@@ -27,14 +27,9 @@ const GoButton = ({ i }) => {
 	return (
 		<div className={styles.container}>
 			<a className={styles.button} href={destination.href}>
-				<Image className="go-image" alt="Visit" src={visit} width={600} height={79} draggable="false" priority />
-				<Image className="go-image" alt="" src={i === 1 ? bh : hp} width={600} height={79} draggable="false" priority />
+				<Image className={styles.image} alt="" src={visit} width={600} height={79} draggable="false" priority />
+				<Image className={styles.image} alt="" src={i === 1 ? bh : hp} width={600} height={79} draggable="false" priority />
 			</a>
-
-			{/* <div style={{ display: 'flex', flexDirection: 'column' }}>
-				<Image className="" alt="Visit" src={visit} width={600} height={79} draggable="false" priority />
-				<Image className="" alt="" src={i === 1 ? bh : hp} width={600} height={79} draggable="false" priority />
-			</div> */}
 		</div>
 	)
 }

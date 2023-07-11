@@ -45,7 +45,7 @@ const SitePicker = () => {
 
 	return (
 		<div className="container">
-			<div className="select-container">
+			<div className="character-wrapper">
 				{Object.keys(characterArray).map((k, i) => {
 					const c = characterArray[k]
 					return (

@@ -38,10 +38,6 @@ html body {
 	width: 100vw;
 	font-family: 'Open Sans', sans-serif;
 	box-sizing: border-box;
-	color: var(--text);
-	/* Stars */
-	height: 100%;
-	/* overflow: hidden; */
 }
 
 #__next {
