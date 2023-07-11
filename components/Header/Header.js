@@ -3,14 +3,10 @@
 import { memo } from 'react'
 import { styled } from 'linaria/react'
 
-import LogoSvg from './jt3.svg'
+// import LogoSvg from './jt3.svg'
 
 const Header = () => {
-	return (
-		<Container>
-			<LogoSvg title="Jammed Transmissions" />
-		</Container>
-	)
+	return <Container>{/* <LogoSvg title="Jammed Transmissions" /> */}</Container>
 }
 const Container = styled.div`
 	margin: 24px 48px;
