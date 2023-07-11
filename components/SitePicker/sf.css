@@ -12,6 +12,14 @@ html.hp {
 	background-color: darkgreen;
 }
 
+.player-select,
+.go-image {
+	@media (max-width: 831px) {
+		width: 95%;
+		height: 100%;
+	}
+}
+
 .container {
 	width: 100%;
 	height: 100%;
@@ -32,6 +40,10 @@ html.hp {
 	background: #bbb;
 	padding: 4px 0px 0px;
 	user-select: none;
+
+	@media (max-width: 831px) {
+		background: none;
+	}
 }
 .character {
 	/* margin-bottom: 4px; */
@@ -46,6 +58,11 @@ html.hp {
 	/* border: 4px solid #bbb; */
 	height: 204px;
 	width: 208px;
+
+	@media (max-width: 831px) {
+		height: 150px;
+		width: 150px;
+	}
 }
 .character.disabled {
 	cursor: default;
@@ -64,6 +81,11 @@ html.hp {
 .character__img {
 	filter: grayscale(0.2);
 	height: 200px;
+
+	@media (max-width: 831px) {
+		height: 96%;
+		width: 96%;
+	}
 }
 .character.active {
 	/* transform: scale(1.05); */

@@ -41,7 +41,7 @@ html body {
 	color: var(--text);
 	/* Stars */
 	height: 100%;
-	overflow: hidden;
+	/* overflow: hidden; */
 }
 
 #__next {
