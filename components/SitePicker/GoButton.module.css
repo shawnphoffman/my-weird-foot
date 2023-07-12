@@ -2,6 +2,30 @@
 	display: flex;
 	justify-content: center;
 	margin: 1em 1em;
+	visibility: hidden;
+}
+
+.bh {
+	.bh_img.image {
+		visibility: visible;
+	}
+	.hp_img.image {
+		visibility: hidden;
+		height: 0;
+	}
+}
+.hp {
+	.bh_img.image {
+		visibility: hidden;
+		height: 0;
+	}
+	.hp_img.image {
+		visibility: visible;
+	}
+}
+.bh,
+.hp {
+	visibility: visible;
 }
 
 .button {
