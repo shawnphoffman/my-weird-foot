@@ -9,7 +9,7 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
 	const child = Children.only(children)
 	const childClassName = child.props.className || ''
 
-	const linkPathname = new URL(props.as || props.href, location.href).pathname
+	const linkPathname = props.as || props.href
 
 	const newClassName = linkPathname === currentRoute ? `${childClassName} ${activeClassName}`.trim() : childClassName
 

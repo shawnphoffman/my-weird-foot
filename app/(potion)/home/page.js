@@ -4,10 +4,8 @@ import styles from '../HighPotion.module.css'
 
 const HighPotionHome = ({}) => {
 	return (
-		<div className={styles.pageDetails}>
-			<div className={styles.pageDescription}>
-				<h1>High Potion Home</h1>
-			</div>
+		<div className={styles.pageDescription}>
+			<h1>Home</h1>
 		</div>
 	)
 }

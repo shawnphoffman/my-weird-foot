@@ -1,52 +1,23 @@
 import { memo } from 'react'
-// import { LazyMotion } from 'framer-motion'
-// import { styled } from 'linaria/react'
+import Image from 'next/image'
 
-// import Header from 'components/Header/Header'
-// import NavBar from 'components/NavBar/NavBar'
-// const loadMotion = () => import('config/motion.js').then(res => res.default)
+import NavBar from 'components/NavBar/NavBar'
 
-// const Details = styled.div`
-// 	text-align: center;
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// `
+import highPotionLogo from './high-potion.png'
+import styles from './HighPotion.module.css'
 
 const HighPotionLayout = ({ children }) => {
 	return (
-		// <ThemeContainer>
-		// 	<LazyMotion features={loadMotion} strict>
-		// 		<Container>
-		// 			<Details>
-		// 				<Header />
-		// 				<NavBar />
-		// 				<div>{children}</div>
-		// 			</Details>
-		// 		</Container>
-		// 	</LazyMotion>
-		// </ThemeContainer>
-		<div>{children}</div>
+		<div className={styles.wrapper}>
+			<div className={styles.page}>
+				<div className={styles.header}>
+					<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={600} height={198.32} priority />
+					<NavBar />
+				</div>
+				<div className={styles.pageDetails}>{children}</div>
+			</div>
+		</div>
 	)
 }
-// const Container = styled.div`
-// 	display: flex;
-// 	flex-direction: column;
-// 	max-width: 900px;
-// 	width: 100%;
-// 	background-attachment: fixed;
-// 	background-size: 700px;
-// 	padding-bottom: 0px;
-// 	min-height: 100vh;
-// `
-// const ThemeContainer = styled.div`
-// 	display: flex;
-// 	flex-direction: column;
-// 	align-items: center;
-// 	max-width: 1200px;
-// 	width: 100%;
-// 	margin-left: auto;
-// 	margin-right: auto;
-// `
 
 export default memo(HighPotionLayout)
