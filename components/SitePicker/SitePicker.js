@@ -8,12 +8,22 @@ import Character from './Character'
 import characterArray from './characterList'
 import GoButton from './GoButton'
 
+const linkBlueHarvest = 'https://blueharvest.rocks'
+const linkHighPotion = '/home'
+
 const SitePicker = () => {
 	const [selectedIndex, setSelectedIndex] = useState()
 
-	const handleClick = useCallback(id => {
-		setSelectedIndex(id)
-	}, [])
+	const handleClick = useCallback(
+		id => {
+			if (selectedIndex === id) {
+				window.location = selectedIndex === 1 ? linkBlueHarvest : linkHighPotion
+			} else {
+				setSelectedIndex(id)
+			}
+		},
+		[selectedIndex]
+	)
 
 	const onKeyDown = useCallback(
 		event => {
@@ -23,7 +33,7 @@ const SitePicker = () => {
 				return
 			}
 			if (event.key === 'Enter' && !!selectedIndex) {
-				window.location = selectedIndex === 1 ? 'https://blueharvest.rocks' : '/home'
+				window.location = selectedIndex === 1 ? linkBlueHarvest : linkHighPotion
 			}
 		},
 		[selectedIndex]
@@ -39,7 +49,6 @@ const SitePicker = () => {
 	useLayoutEffect(() => {
 		if (!selectedIndex) return
 		const selectedCharacter = Object.values(characterArray)[selectedIndex]
-		console.log(selectedCharacter)
 		document.documentElement.className = selectedCharacter.id
 	}, [selectedIndex])
 
