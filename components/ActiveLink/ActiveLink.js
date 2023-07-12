@@ -13,11 +13,6 @@ const ActiveLink = ({ children, activeClassName, ...props }) => {
 
 	const newClassName = linkPathname === currentRoute ? `${childClassName} ${activeClassName}`.trim() : childClassName
 
-	console.log({
-		currentRoute,
-		linkPathname,
-	})
-
 	return (
 		<Link passHref {...props}>
 			{React.cloneElement(child, {

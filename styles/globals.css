@@ -9,19 +9,10 @@
 	--applePodcasts: #872ec4;
 	--yellow: rgb(237, 237, 55);
 
-	--jt1: #1e1e51;
-	--jt2: #092043;
-	--jt3: #f66e0d;
-	--jt4: #747980;
-
-	--logo7: blue;
-	--logo6: #33f;
-	--logo5: #66f;
-	--logo4: #99f;
-	--logo3: #ccf;
-	--logo2: #f0f0ff;
-
-	--logo: var(--logo3);
+	--hp1: #175200;
+	--hp2: #7aeb1f;
+	--hp3: #c0f321;
+	--hp4: #fdff43;
 }
 
 * {

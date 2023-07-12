@@ -14,8 +14,8 @@
 	cursor: pointer;
 }
 .styledLink:hover {
-	color: var(--logo) !important;
+	color: var(--hp3) !important;
 }
 .styledLink.active {
-	border-bottom: 1px solid var(--text);
+	border-bottom: 1px solid var(--hp4);
 }
