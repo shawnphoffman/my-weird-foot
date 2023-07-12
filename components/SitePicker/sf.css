@@ -6,14 +6,14 @@ html {
 	height: 100vh;
 	background-color: rgb(0, 0, 128);
 	background: linear-gradient(180deg, rgba(0, 0, 128, 1) 0%, rgba(0, 0, 50, 1) 100%);
-	&.bh {
-		background: rgb(139, 0, 0);
-		background: linear-gradient(180deg, rgba(139, 0, 0, 1) 0%, rgba(40, 0, 0, 1) 100%);
-	}
-	&.hp {
-		background: rgb(0, 100, 0);
-		background: linear-gradient(180deg, rgba(0, 100, 0, 1) 0%, rgb(0, 30, 0) 100%);
-	}
+}
+html.bh {
+	background: rgb(139, 0, 0);
+	background: linear-gradient(180deg, rgba(139, 0, 0, 1) 0%, rgba(40, 0, 0, 1) 100%);
+}
+html.hp {
+	background: rgb(0, 100, 0);
+	background: linear-gradient(180deg, rgba(0, 100, 0, 1) 0%, rgb(0, 30, 0) 100%);
 }
 
 /* IMAGES */
@@ -65,6 +65,9 @@ html {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+.character:not(.disabled, .active):hover {
+	border: 2px solid white;
 }
 @media (max-width: 831px) {
 	.character {

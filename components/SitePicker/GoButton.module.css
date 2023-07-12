@@ -5,7 +5,7 @@
 }
 
 .button {
-	background-color: purple;
+	background-color: blue;
 	padding: 1em 0.5em;
 	font-size: 24px;
 	font-weight: bold;
@@ -21,7 +21,7 @@
 }
 
 .button:hover {
-	background-color: blue;
+	background-color: purple;
 }
 
 @media (max-width: 600px) {
