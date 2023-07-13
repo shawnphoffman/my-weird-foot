@@ -9,7 +9,10 @@ import styles from './GoButton.module.css'
 
 const GoButton = ({ i }) => {
 	const destination = useMemo(() => {
-		if (!i) return {}
+		if (!i)
+			return {
+				href: '/',
+			}
 
 		return i === 1
 			? {
@@ -23,8 +26,6 @@ const GoButton = ({ i }) => {
 					parentClass: styles.hp,
 			  }
 	}, [i])
-
-	// if (!i) return null
 
 	return (
 		<div className={`${styles.container} ${destination.parentClass ?? ''}`}>
