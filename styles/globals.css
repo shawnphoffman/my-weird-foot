@@ -20,7 +20,8 @@
 	font-family: 'Open Sans', sans-serif;
 }
 html {
-	background-color: var(--bg);
+	background: rgb(0, 20, 0);
+	background: linear-gradient(180deg, rgb(0, 30, 0) 0%, rgb(0, 0, 0) 100%);
 }
 html {
 	font-size: 16px;
