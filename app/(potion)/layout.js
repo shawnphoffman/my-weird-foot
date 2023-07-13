@@ -8,13 +8,15 @@ import styles from './HighPotion.module.css'
 
 const HighPotionLayout = ({ children }) => {
 	return (
-		<div className={styles.wrapper}>
-			<div className={styles.page}>
-				<div className={styles.header}>
-					<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={500} height={165.41} priority />
-					<NavBar />
+		<div className="scroller">
+			<div className={styles.wrapper}>
+				<div className={styles.page}>
+					<div className={styles.header}>
+						<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={500} height={165.41} priority />
+						<NavBar />
+					</div>
+					<div className={styles.pageDetails}>{children}</div>
 				</div>
-				<div className={styles.pageDetails}>{children}</div>
 			</div>
 		</div>
 	)

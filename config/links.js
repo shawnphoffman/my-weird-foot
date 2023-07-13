@@ -38,7 +38,7 @@ const items = [
 	{
 		title: 'Emails',
 		href: 'mailto:highpotionpod@gmail.com',
-		icon: 'fa-solid fa-mailbox',
+		icon: 'fa-solid fa-mailbox-flag-up',
 		background: '#52565e',
 	},
 	// {

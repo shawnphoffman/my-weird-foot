@@ -1,14 +1,11 @@
 import { memo } from 'react'
 
 import LinkCard from 'components/LinkCard/LinkCard'
-// import Ratings from 'components/Ratings/Ratings'
-// import Reviews from 'components/Reviews/Reviews'
+import Ratings from 'components/Ratings/Ratings'
+import Reviews from 'components/Reviews/Reviews'
 import items from 'config/links'
 
 import styles from '../HighPotion.module.css'
-
-// const appleRating = '5.0'
-// const appleRatingUrl = 'https://podcasts.apple.com/us/podcast/high-potion/id1540630919'
 
 const HighPotionHome = ({}) => {
 	return (
@@ -17,7 +14,7 @@ const HighPotionHome = ({}) => {
 				A podcast where hosts Steve Krothe and Hawes Burkhardt talk about video games. Yes, another video game podcast hosted by two dudes.
 				Check us out though, it&apos;s a lot of fun!
 			</div>
-			{/* <Ratings appleRating={appleRating} appleRatingUrl={appleRatingUrl} /> */}
+			<Ratings />
 			<div className={styles.pageRow}>
 				{items.map((item, i) => {
 					return (
@@ -36,7 +33,9 @@ const HighPotionHome = ({}) => {
 				})}
 			</div>
 
-			<div className={styles.pageRow}>{/* <Reviews reviews={reviews} /> */}</div>
+			<div className={styles.pageRow}>
+				<Reviews />
+			</div>
 		</>
 	)
 }
