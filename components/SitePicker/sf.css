@@ -41,7 +41,7 @@ html.hp {
 	user-select: none;
 	max-width: 818px;
 }
-@media (max-width: 831px) {
+@media (max-width: 848px) {
 	.character-wrapper {
 		max-width: 602px;
 	}
@@ -69,7 +69,7 @@ html.hp {
 .character:not(.disabled, .active):hover {
 	border: 2px solid white;
 }
-@media (max-width: 831px) {
+@media (max-width: 848px) {
 	.character {
 		height: 150px;
 		width: 150px;
@@ -85,7 +85,7 @@ html.hp {
 	filter: grayscale(0.2);
 	height: 200px;
 }
-@media (max-width: 831px) {
+@media (max-width: 848px) {
 	.character img {
 		height: 100%;
 		width: 100%;
@@ -102,11 +102,16 @@ html.hp {
 	position: absolute;
 	text-align: center;
 	top: -8px;
-	left: 31%;
+	left: 36%;
 	font-size: 46px;
 	color: red;
 	font-weight: 700;
 	text-shadow: 2px 2px 4px black;
+}
+@media (max-width: 848px) {
+	.character.active:after {
+		left: 31%;
+	}
 }
 .character.active img {
 	filter: grayscale(0);
