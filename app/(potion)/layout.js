@@ -6,6 +6,18 @@ import NavBar from 'components/NavBar/NavBar'
 import highPotionLogo from './high-potion.png'
 import styles from './HighPotion.module.css'
 
+export const metadata = {
+	title: 'High Potion',
+	description: 'A video game podcast hosted by Steve Krothe and Hawes Burkhardt',
+	openGraph: {
+		title: 'High Potion',
+		description: 'A video game podcast hosted by Steve Krothe and Hawes Burkhardt',
+		url: 'https://myweirdfoot.com',
+		locale: 'en_US',
+		type: 'website',
+	},
+}
+
 const HighPotionLayout = ({ children }) => {
 	return (
 		<div className={styles.wrapper}>
