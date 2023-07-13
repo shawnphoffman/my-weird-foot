@@ -12,7 +12,9 @@ export default function RootLayout({ children }) {
 				{/* <!-- FontAwesome Icons --> */}
 				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" crossOrigin="anonymous" />
 			</head>
-			<body>{children}</body>
+			<body>
+				<div className="scroller">{children}</div>
+			</body>
 		</html>
 	)
 }
