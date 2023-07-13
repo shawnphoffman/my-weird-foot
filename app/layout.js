@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
 		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
 				{/* <!-- FontAwesome Icons --> */}
-				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" crossOrigin="anonymous" />
+				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" rel="preload" as="font" />
 			</head>
 			<body>
 				<div className="scroller">{children}</div>
