@@ -11,7 +11,7 @@ const HighPotionLayout = ({ children }) => {
 		<div className={styles.wrapper}>
 			<div className={styles.page}>
 				<div className={styles.header}>
-					<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={600} height={198.32} priority />
+					<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={500} height={165.41} priority />
 					<NavBar />
 				</div>
 				<div className={styles.pageDetails}>{children}</div>
