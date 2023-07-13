@@ -2,10 +2,11 @@
 	min-width: 250px;
 	flex: 1 1 250px;
 	max-width: 350px;
-	transition: all 200ms linear;
+	transition: all 150ms linear;
+	transform: skewY(-2deg);
 }
 .container:hover {
-	transform: scale(1.08);
+	transform: scale(1.05) skewY(0deg);
 }
 
 .card {
