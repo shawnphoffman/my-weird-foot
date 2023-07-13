@@ -8,7 +8,7 @@
 	width: 100%;
 }
 
-.heading {
+.header {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
