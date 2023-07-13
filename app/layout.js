@@ -8,6 +8,7 @@ const openSans = Open_Sans({ subsets: ['latin'] })
 export const metadata = {
 	title: 'My Weird Foot',
 	description: 'Landing page for Blue Harvest and High Potion podcasts',
+	metadataBase: new URL('https://myweirdfoot.com'),
 	openGraph: {
 		title: 'My Weird Foot',
 		description: 'Landing page for Blue Harvest and High Potion podcasts',
