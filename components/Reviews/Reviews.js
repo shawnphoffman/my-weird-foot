@@ -43,6 +43,7 @@ const Reviews = async () => {
 
 	return (
 		<>
+			<div className={styles.heading}>Recent Reviews</div>
 			{filteredReviews.map(r => (
 				<div className={styles.container} key={r.title}>
 					<div className={styles.header}>
