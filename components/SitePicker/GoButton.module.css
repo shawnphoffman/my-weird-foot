@@ -5,6 +5,12 @@
 	visibility: hidden;
 }
 
+@media (max-width: 600px) {
+	.container {
+		margin-bottom: 6em;
+	}
+}
+
 .bh {
 	.bh_img.image {
 		visibility: visible;
