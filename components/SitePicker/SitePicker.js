@@ -4,6 +4,7 @@ import './sf.css'
 
 import { memo, useCallback, useEffect, useLayoutEffect, useState } from 'react'
 
+import BackgroundAudio from './BackgroundAudio'
 import Character from './Character'
 import characterArray from './characterList'
 import GoButton from './GoButton'
@@ -71,6 +72,7 @@ const SitePicker = () => {
 				})}
 			</div>
 			<GoButton i={selectedIndex} />
+			<BackgroundAudio />
 		</div>
 	)
 }

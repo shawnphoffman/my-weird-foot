@@ -1,28 +1,28 @@
 'use client'
 
-import { memo, useEffect, useRef } from 'react'
+import { memo, useCallback, useEffect, useRef } from 'react'
 
 const BackgroundAudio = () => {
-	const audioSrc = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/813538/02.%20Player%20Select.mp3'
+	const audioSrc = '/playerSelect.mp3'
 	const audioRef = useRef()
+
+	const onClick = useCallback(() => {
+		const current = audioRef.current
+		current.play()
+	}, [])
 
 	useEffect(() => {
 		audioRef.current = new Audio(audioSrc)
 		const current = audioRef.current
 		current.play().catch(() => {
-			document.addEventListener(
-				'click',
-				() => {
-					current.play()
-				},
-				{ once: true }
-			)
+			document.addEventListener('click', onClick, { once: true })
 		})
 
 		return () => {
+			document.removeEventListener('click', onKeyDown)
 			current.pause()
 		}
-	}, [])
+	}, [onClick])
 
 	return null
 }
