@@ -44,6 +44,7 @@ html.hp {
 @media (max-width: 848px) {
 	.character-wrapper {
 		max-width: 602px;
+		background: none;
 	}
 }
 @media (max-width: 600px) {
