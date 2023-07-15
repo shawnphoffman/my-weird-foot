@@ -5,7 +5,6 @@
 	},
 	"include": [
 		"app",
-		"OLD",
 		"styles",
 		"utils",
 		"components",
