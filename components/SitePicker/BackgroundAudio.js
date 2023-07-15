@@ -19,7 +19,7 @@ const BackgroundAudio = () => {
 		})
 
 		return () => {
-			document.removeEventListener('click', onKeyDown)
+			document.removeEventListener('click', onClick)
 			current.pause()
 		}
 	}, [onClick])
