@@ -4,23 +4,16 @@ import styles from './Ratings.module.css'
 
 const dataUrl = 'https://api.shawn.party/api/high-potion/reviews'
 
-async function getData() {
-	try {
-		const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 } })
-		const data = await res.json()
-		const { rating, ratingsUrl } = data
-
-		return {
-			appleRating: rating,
-			appleRatingUrl: ratingsUrl,
-		}
-	} catch {
-		return {}
-	}
-}
-
 const Ratings = async () => {
-	const data = await getData()
+	const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 * 12 } })
+	const json = await res.json()
+
+	const data = json?.rating
+		? {
+				appleRating: json.rating,
+				appleRatingUrl: json.ratingsUrl,
+		  }
+		: {}
 
 	if (!data || !data.appleRating) return null
 
