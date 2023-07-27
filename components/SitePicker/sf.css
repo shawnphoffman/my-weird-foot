@@ -16,6 +16,13 @@ html.hp {
 	background: linear-gradient(180deg, rgba(0, 100, 0, 1) 0%, rgb(0, 30, 0) 100%);
 }
 
+body {
+	background-image: url('/bg.png');
+	background-origin: inherit;
+	background-repeat: repeat;
+	animation: scroll-diagonal 10s linear infinite;
+}
+
 /* IMAGES */
 .player-select {
 	width: 100%;
@@ -142,5 +149,14 @@ html.hp {
 	}
 	100% {
 		filter: brightness(150%);
+	}
+}
+
+@keyframes scroll-diagonal {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 551px 331px;
 	}
 }
