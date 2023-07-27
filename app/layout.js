@@ -5,6 +5,8 @@ import Script from 'next/script'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
+export const runtime = 'edge'
+
 export const metadata = {
 	title: 'My Weird Foot',
 	description: 'Landing page for Blue Harvest and High Potion podcasts',
