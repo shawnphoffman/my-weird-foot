@@ -1,9 +1,12 @@
 export default function Message({ role, content }) {
 	if (role === 'system') return null
+
+	const isAssistant = role === 'assistant'
+
 	return (
-		<div className={`message ${role === 'assistant' && 'ai'}`}>
+		<div className={`message ${isAssistant ? 'ai' : 'user'}`}>
 			{/* <div>{role}</div> */}
-			<div>{content}</div>
+			<div>{isAssistant ? content : `You: ${content}`}</div>
 		</div>
 	)
 }

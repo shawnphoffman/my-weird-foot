@@ -32,6 +32,7 @@
 	height: 100%;
 	flex: 1;
 	overflow: hidden;
+	width: 100%;
 }
 @media screen and (max-width: 420px) {
 	.adventureDetails {

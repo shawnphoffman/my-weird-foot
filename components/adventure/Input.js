@@ -9,7 +9,7 @@ export default function Input({ value, onChange, onClick, disabled }) {
 			<input
 				className="input text"
 				disabled={disabled}
-				placeholder="Enter your next step..."
+				placeholder={disabled ? 'Loading...' : 'Enter your next step...'}
 				value={value}
 				onChange={onChange}
 				onKeyDown={handleKeyDown}
