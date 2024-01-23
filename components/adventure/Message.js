@@ -5,7 +5,6 @@ export default function Message({ role, content }) {
 
 	return (
 		<div className={`message ${isAssistant ? 'ai' : 'user'}`}>
-			{/* <div>{role}</div> */}
 			<div>{isAssistant ? content : `You: ${content}`}</div>
 		</div>
 	)
