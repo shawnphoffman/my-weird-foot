@@ -8,7 +8,7 @@ export const submitMessage = async (messages, prompt) => {
 		apiKey: process.env.OPENAI_API_KEY,
 	})
 
-	const newMessages = messages.length > 10 ? [...messages.slice(-10), prompt] : [...messages, prompt]
+	const newMessages = messages.length > 6 ? [...messages.slice(-6), prompt] : [...messages, prompt]
 
 	const resp = await openai.chat.completions.create({
 		model: 'gpt-3.5-turbo',

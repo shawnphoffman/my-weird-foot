@@ -12,7 +12,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(initialMessages)
-	const [history, setHistory] = useState([])
+	// const [history, setHistory] = useState([])
 	const ref = useRef(null)
 
 	useEffect(() => {
@@ -30,17 +30,17 @@ export default function Adventure({ initialMessages, submitMessage }) {
 		try {
 			const data = await submitMessage(messages, prompt)
 			console.log('then', { data })
-			const res = data.choices[0].message.content
-			setMessages(messages => [
-				...messages,
-				{
-					role: 'assistant',
-					content: res,
-				},
-			])
-			setHistory(history => [...history, { question: input, answer: res }])
-			setInput('')
-			setLoading(false)
+			if (!!data?.choices[0]) {
+				const res = data?.choices[0].message.content
+				setMessages(messages => [
+					...messages,
+					{
+						role: 'assistant',
+						content: res,
+					},
+				])
+				// setHistory(history => [...history, { question: input, answer: res }])
+			}
 		} catch (error) {
 			console.error('error', { error })
 			setMessages(messages => [
@@ -51,6 +51,8 @@ export default function Adventure({ initialMessages, submitMessage }) {
 				},
 			])
 		}
+		setInput('')
+		setLoading(false)
 	}
 
 	return (
