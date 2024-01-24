@@ -38,6 +38,9 @@ export default function Adventure({ initialMessages, submitMessage }) {
 					content: res,
 				},
 			])
+			setHistory(history => [...history, { question: input, answer: res }])
+			setInput('')
+			setLoading(false)
 		} catch (error) {
 			console.error('error', { error })
 			setMessages(messages => [
@@ -48,9 +51,6 @@ export default function Adventure({ initialMessages, submitMessage }) {
 				},
 			])
 		}
-		setHistory(history => [...history, { question: input, answer: res }])
-		setInput('')
-		setLoading(false)
 	}
 
 	return (
