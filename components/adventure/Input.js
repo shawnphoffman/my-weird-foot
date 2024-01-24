@@ -16,7 +16,7 @@ export default function Input({ value, onChange, onClick, disabled }) {
 				autoFocus={true}
 			/>
 			<button className="input btn" onClick={onClick} disabled={disabled}>
-				<i className="fa-solid fa-turn-down-left" />
+				<i className="fa-solid fa-turn-down-left" aria-hidden />
 				Enter
 			</button>
 		</div>

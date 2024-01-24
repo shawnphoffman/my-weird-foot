@@ -1,7 +1,6 @@
 import 'styles/globals.css'
 
 import { Open_Sans } from 'next/font/google'
-import Script from 'next/script'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -20,12 +19,11 @@ export const metadata = {
 	},
 }
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
 	return (
 		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
 			<head>
-				{/* <!-- FontAwesome Icons --> */}
-				<Script src="https://kit.fontawesome.com/d7ccc5bb1a.js" strategy="afterInteractive" rel="preload" as="font" />
+				<script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" async></script>
 			</head>
 			<body>
 				<div className="scroller">{children}</div>
