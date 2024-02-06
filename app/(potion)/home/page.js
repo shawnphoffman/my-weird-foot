@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import LinkCard from 'components/potion/LinkCard'
 import RatingsApple from 'components/potion/RatingsApple'
 import RatingsSpotify from 'components/potion/RatingsSpotify'
-import Reviews from 'components/Reviews/Reviews'
+import Reviews from 'components/potion/Reviews'
 
 import items from './links'
 

@@ -43,7 +43,7 @@ const items = [
 	{
 		title: 'Emails',
 		href: 'mailto:highpotionpod@gmail.com',
-		icon: 'fa-solid fa-mailbox-flag-up',
+		icon: 'fa-solid fa-at',
 		background: '#52565e',
 	},
 	// {
@@ -86,7 +86,7 @@ const items = [
 	{
 		title: 'RSS',
 		href: rssFeedUrl,
-		icon: 'fa-solid fa-rss',
+		icon: 'fa-solid fa-square-rss',
 		background: '#ce4a0c',
 	},
 	{

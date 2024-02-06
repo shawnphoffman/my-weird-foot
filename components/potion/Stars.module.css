@@ -1,0 +1,5 @@
+.container {
+	color: var(--hp4);
+	display: flex;
+	flex-wrap: nowrap;
+}

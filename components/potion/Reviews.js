@@ -1,35 +1,14 @@
+import { getReviews } from 'app/(potion)/actions'
+
 import styles from './Reviews.module.css'
 import Stars from './Stars'
 
-const dataUrl = 'https://api.shawn.party/api/high-potion/reviews'
-
-async function getData() {
-	try {
-		const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 } })
-		const data = await res.json()
-		const { reviews } = data
-
-		return {
-			reviews,
-		}
-	} catch {
-		return {}
-	}
-}
-
-const filteredAuthors = ['']
-
 export default async function Reviews() {
-	const data = await getData()
-
-	const { reviews } = data
+	const { reviews } = await getReviews()
 
 	if (!reviews) return null
 
 	const filteredReviews = reviews.reduce((memo, acc) => {
-		if (filteredAuthors.includes(acc.author)) {
-			return memo
-		}
 		if (acc.stars !== '5') {
 			return memo
 		}
@@ -37,7 +16,7 @@ export default async function Reviews() {
 		return memo
 	}, [])
 
-	if (!filteredReviews) return null
+	if (!filteredReviews || !filteredReviews.length) return null
 
 	return (
 		<>
@@ -46,7 +25,7 @@ export default async function Reviews() {
 				<div className={styles.container} key={r.title}>
 					<div className={styles.header}>
 						<div className={styles.byline}>
-							<div className={styles.title}>&quot;{r.title}&quot;</div>
+							<div className={styles.title}>{`"${r.title}"`}</div>
 							<div className={styles.author}>{r.author}</div>
 						</div>
 						<Stars count={r.stars} />
