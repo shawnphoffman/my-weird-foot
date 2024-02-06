@@ -1,3 +1,8 @@
+export const spotifyId = '3Di7qFLy6FoNg6zcBGaOnK'
+export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
+export const applePodcastId = '1571377051'
+export const rssFeedUrl = 'https://anchor.fm/s/5dc2916c/podcast/rss'
+
 const items = [
 	{
 		title: 'Twitter',
@@ -7,7 +12,7 @@ const items = [
 	},
 	{
 		title: 'Spotify',
-		href: 'https://open.spotify.com/show/3Di7qFLy6FoNg6zcBGaOnK',
+		href: spotifyUrl,
 		icon: 'fa-brands fa-spotify',
 		background: '#16883e',
 	},
@@ -19,7 +24,7 @@ const items = [
 	// },
 	{
 		title: 'Apple Podcasts',
-		href: 'https://podcasts.apple.com/us/podcast/high-potion/id1571377051',
+		href: `https://podcasts.apple.com/us/podcast/high-potion/id${applePodcastId}`,
 		icon: 'fa-solid fa-podcast',
 		background: 'var(--applePodcasts)',
 	},
@@ -56,7 +61,7 @@ const items = [
 	{
 		title: 'Overcast',
 		// overcast://x-callback-url/add?url=https%3A%2F%2Ffeed.podbean.com%2Fblueharvestpodcast%2Ffeed.xml
-		href: 'https://overcast.fm/itunes1571377051',
+		href: `https://overcast.fm/itunes${applePodcastId}`,
 		icon: 'fak fa-overcast fa-lg',
 		background: '#be5a01',
 	},
@@ -80,7 +85,7 @@ const items = [
 	// },
 	{
 		title: 'RSS',
-		href: 'https://anchor.fm/s/5dc2916c/podcast/rss',
+		href: rssFeedUrl,
 		icon: 'fa-solid fa-rss',
 		background: '#ce4a0c',
 	},

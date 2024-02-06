@@ -1,6 +1,5 @@
 import './adventure.css'
 
-import { memo } from 'react'
 import { GeistMono } from 'geist/font/mono'
 import Image from 'next/image'
 
@@ -18,7 +17,7 @@ export const metadata = {
 	},
 }
 
-const AdventureLayout = ({ children }) => {
+export default async function AdventureLayout({ children }) {
 	return (
 		<div className={`${GeistMono.className} adventureWrapper`}>
 			<div className="adventureHeader">
@@ -28,5 +27,3 @@ const AdventureLayout = ({ children }) => {
 		</div>
 	)
 }
-
-export default memo(AdventureLayout)

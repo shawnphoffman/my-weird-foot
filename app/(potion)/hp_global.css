@@ -25,22 +25,18 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-}
-@media screen and (max-width: 420px) {
-	.pageDetails {
-		margin-bottom: 16px;
-	}
+	gap: 1rem;
 }
 
 .pageDescription {
-	font-size: 18px;
-	max-width: 85%;
+	font-size: 1.1rem;
 	line-height: 1.5;
-	margin-bottom: 8px;
+	width: 100%;
+	max-width: 800px;
 }
 @media screen and (max-width: 420px) {
 	.pageDescription {
-		font-size: 16px;
+		font-size: 1rem;
 	}
 }
 
@@ -50,32 +46,53 @@
 	justify-content: center;
 	flex-wrap: wrap;
 	transform: translateZ(0px);
-	flex: 1;
-	margin-top: 1em;
+	width: 100%;
+	gap: 1rem;
 }
-
-/*  */
 
 .header {
 	text-align: center;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	/* gap: 1rem; */
+	margin: 1rem;
 }
 
 .headerLogo {
-	width: 100%;
+	width: auto;
 	height: auto;
 	max-width: 500px;
-	margin: 1em 0em;
+}
+
+.navContainer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 16px;
 }
 
 .iframe {
 	width: 100%;
 	max-width: 660px;
-	overflow: hidden;
-	border-radius: 10px;
-	background: transparent;
 	border: none;
-	border-radius: 12px;
+}
+
+.episodesContainer {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 720px;
+	width: 100%;
+}
+
+.ratingsWrapper {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-bottom: 0.5rem;
 }

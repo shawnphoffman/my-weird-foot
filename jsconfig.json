@@ -10,7 +10,7 @@
 		"components",
 		"hooks",
 		"context",
-		"public",
+		"public"
 	],
 	"exclude": [
 		"node_modules/**/*",

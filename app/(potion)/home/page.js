@@ -1,21 +1,26 @@
-import { memo } from 'react'
+import { Suspense } from 'react'
 
-import LinkCard from 'components/LinkCard/LinkCard'
-import Ratings from 'components/Ratings/Ratings'
+import LinkCard from 'components/potion/LinkCard'
+import RatingsApple from 'components/potion/RatingsApple'
+import RatingsSpotify from 'components/potion/RatingsSpotify'
 import Reviews from 'components/Reviews/Reviews'
-import items from 'config/links'
 
-import styles from '../HighPotion.module.css'
+import items from './links'
 
-const HighPotionHome = ({}) => {
+export default async function HighPotionHome({}) {
 	return (
 		<>
-			<div className={styles.pageDescription}>
+			<div className={'pageDescription'}>
 				A podcast where hosts Steve Krothe and Hawes Burkhardt talk about video games. Yes, another video game podcast hosted by two dudes.
 				Check us out though, it&apos;s a lot of fun!
 			</div>
-			<Ratings />
-			<div className={styles.pageRow}>
+			<div className="ratingsWrapper">
+				<Suspense>
+					<RatingsApple />
+					<RatingsSpotify />
+				</Suspense>
+			</div>
+			<div className={'pageRow'}>
 				{items.map((item, i) => {
 					return (
 						<LinkCard
@@ -33,11 +38,9 @@ const HighPotionHome = ({}) => {
 				})}
 			</div>
 
-			<div className={styles.pageRow}>
+			<div className={'pageRow'}>
 				<Reviews />
 			</div>
 		</>
 	)
 }
-
-export default memo(HighPotionHome)

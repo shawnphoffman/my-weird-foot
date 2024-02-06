@@ -1,5 +1,3 @@
-import { memo, useMemo } from 'react'
-
 import styles from './Reviews.module.css'
 import Stars from './Stars'
 
@@ -21,7 +19,7 @@ async function getData() {
 
 const filteredAuthors = ['']
 
-const Reviews = async () => {
+export default async function Reviews() {
 	const data = await getData()
 
 	const { reviews } = data
@@ -59,5 +57,3 @@ const Reviews = async () => {
 		</>
 	)
 }
-
-export default memo(Reviews)

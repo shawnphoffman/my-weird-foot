@@ -1,7 +1,5 @@
 'use client'
 
-import './adventure.css'
-
 import { useEffect, useRef, useState } from 'react'
 
 import Input from 'components/adventure/Input'

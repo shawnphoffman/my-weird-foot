@@ -1,10 +1,8 @@
-import { memo } from 'react'
-
 import styles from './Ratings.module.css'
 
 const dataUrl = 'https://api.shawn.party/api/high-potion/reviews'
 
-const Ratings = async () => {
+export default async function Ratings() {
 	const res = await fetch(dataUrl, { next: { revalidate: 60 * 60 * 12 } })
 	const json = await res.json()
 
@@ -25,5 +23,3 @@ const Ratings = async () => {
 		</a>
 	)
 }
-
-export default memo(Ratings)

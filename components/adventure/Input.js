@@ -1,3 +1,5 @@
+'use client'
+
 export default function Input({ value, onChange, onClick, disabled }) {
 	const handleKeyDown = e => {
 		if (e.key === 'Enter') {

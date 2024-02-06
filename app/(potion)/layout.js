@@ -1,10 +1,11 @@
-import { memo } from 'react'
+import './hp_global.css'
+
 import Image from 'next/image'
 
-import NavBar from 'components/NavBar/NavBar'
+import ActiveLink from 'components/potion/ActiveLink'
 
+import { applePodcastId } from './home/links'
 import highPotionLogo from './high-potion.png'
-import styles from './HighPotion.module.css'
 
 export const metadata = {
 	title: 'High Potion',
@@ -16,20 +17,25 @@ export const metadata = {
 		locale: 'en_US',
 		type: 'website',
 	},
+	itunes: {
+		appId: applePodcastId,
+	},
 }
 
-const HighPotionLayout = ({ children }) => {
+export default async function HighPotionLayout({ children }) {
 	return (
-		<div className={styles.wrapper}>
-			<div className={styles.page}>
-				<div className={styles.header}>
-					<Image className={styles.headerLogo} alt="High Potion" src={highPotionLogo} width={500} height={165} priority />
-					<NavBar />
+		<div className={'wrapper'}>
+			<div className={'page'}>
+				<div className={'header'}>
+					<Image className={'headerLogo'} alt="High Potion" src={highPotionLogo} width={500} height={165} priority />
+					<div className="navContainer">
+						<ActiveLink href="/home" label="Links" />
+						<ActiveLink href="/episodes" label="Episodes" />
+						<ActiveLink href="/listen-now" label="Listen Now" />
+					</div>
 				</div>
-				<div className={styles.pageDetails}>{children}</div>
+				<div className={'pageDetails'}>{children}</div>
 			</div>
 		</div>
 	)
 }
-
-export default memo(HighPotionLayout)

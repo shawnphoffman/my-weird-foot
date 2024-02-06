@@ -1,8 +1,8 @@
 'use client'
 
-import { memo, useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 
-const BackgroundAudio = () => {
+export default function BackgroundAudio() {
 	const audioSrc = '/playerSelect.mp3'
 	const audioRef = useRef()
 
@@ -26,5 +26,3 @@ const BackgroundAudio = () => {
 
 	return null
 }
-
-export default memo(BackgroundAudio)

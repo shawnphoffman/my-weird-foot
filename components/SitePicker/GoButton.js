@@ -1,4 +1,4 @@
-import { memo, useMemo } from 'react'
+import { useMemo } from 'react'
 import Image from 'next/image'
 
 import bh from 'components/SitePicker/images/titleBlueHarvest@3x.png'
@@ -7,7 +7,7 @@ import visit from 'components/SitePicker/images/titleVisit@3x.png'
 
 import styles from './GoButton.module.css'
 
-const GoButton = ({ i }) => {
+export default function GoButton({ i }) {
 	const destination = useMemo(() => {
 		if (!i)
 			return {
@@ -37,5 +37,3 @@ const GoButton = ({ i }) => {
 		</div>
 	)
 }
-
-export default memo(GoButton)

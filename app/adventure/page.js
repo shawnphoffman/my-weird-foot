@@ -1,5 +1,6 @@
+import Adventure from 'components/adventure/Adventure'
+
 import { submitMessage } from './actions'
-import Adventure from './adventure'
 
 export const initialMessages = [
 	{

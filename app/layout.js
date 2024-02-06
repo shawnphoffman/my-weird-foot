@@ -1,10 +1,8 @@
-import 'styles/globals.css'
+import './global.css'
 
 import { Open_Sans } from 'next/font/google'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
-
-export const runtime = 'edge'
 
 export const metadata = {
 	title: 'My Weird Foot',
@@ -21,9 +19,9 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	return (
-		<html lang="en" style={{ fontFamily: openSans.style.fontFamily }}>
+		<html lang="en" className={openSans.className}>
 			<head>
-				<script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" async></script>
+				<script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" async defer></script>
 			</head>
 			<body>
 				<div className="scroller">{children}</div>
