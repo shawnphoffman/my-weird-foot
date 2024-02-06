@@ -10,7 +10,7 @@ import GoButton from './GoButton'
 const linkBlueHarvest = 'https://blueharvest.rocks'
 const linkHighPotion = '/home'
 
-const SitePicker = () => {
+export default function SitePicker() {
 	const [selectedIndex, setSelectedIndex] = useState()
 
 	const handleClick = useCallback(
@@ -74,5 +74,3 @@ const SitePicker = () => {
 		</div>
 	)
 }
-
-export default memo(SitePicker)

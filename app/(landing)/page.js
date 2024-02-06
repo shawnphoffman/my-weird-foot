@@ -3,10 +3,10 @@ import './landing.css'
 import { memo, Suspense } from 'react'
 import Image from 'next/image'
 
-import playerSelect from 'components/SitePicker/images/playerSelect@3x.png'
-import SitePicker from 'components/SitePicker/SitePicker'
+import playerSelect from 'components/landing/images/playerSelect@3x.png'
+import SitePicker from 'components/landing/SitePicker'
 
-const Landing = () => {
+export default async function Landing() {
 	return (
 		<div className="landing-container">
 			<Image className="player-select" alt="Player Select" src={playerSelect} width={600} height={142} draggable="false" priority />
@@ -16,5 +16,3 @@ const Landing = () => {
 		</div>
 	)
 }
-
-export default memo(Landing)

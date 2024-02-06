@@ -1,9 +1,9 @@
 import { useMemo } from 'react'
 import Image from 'next/image'
 
-import bh from 'components/SitePicker/images/titleBlueHarvest@3x.png'
-import hp from 'components/SitePicker/images/titleHighPotion@3x.png'
-import visit from 'components/SitePicker/images/titleVisit@3x.png'
+import bh from 'components/landing/images/titleBlueHarvest@3x.png'
+import hp from 'components/landing/images/titleHighPotion@3x.png'
+import visit from 'components/landing/images/titleVisit@3x.png'
 
 import styles from './GoButton.module.css'
 
