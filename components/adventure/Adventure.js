@@ -10,7 +10,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(initialMessages)
-	// const [history, setHistory] = useState([])
+	const [history, setHistory] = useState([])
 	const ref = useRef(null)
 
 	useEffect(() => {
@@ -37,7 +37,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 						content: res,
 					},
 				])
-				// setHistory(history => [...history, { question: input, answer: res }])
+				setHistory(history => [...history, { question: input, answer: res }])
 			}
 		} catch (error) {
 			console.error('error', { error })

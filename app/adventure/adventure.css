@@ -1,8 +1,14 @@
+@media screen and (max-width: 420px) {
+	.scroller {
+		padding: 0 0.5rem;
+	}
+}
+
 .adventureLogo {
 	width: 100%;
 	height: auto;
 	max-width: 500px;
-	margin: 1rem 0rem 0rem 0rem;
+	margin: 0.25rem 0rem 0rem 0rem;
 }
 
 .adventureheader {
@@ -56,6 +62,11 @@
 	padding: 1rem;
 	height: 100%;
 }
+@media screen and (max-width: 420px) {
+	.adventure {
+		padding: 0.5rem;
+	}
+}
 
 .column {
 	color: white;
@@ -63,6 +74,7 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: stretch;
+	width: 100%;
 }
 
 .title {
@@ -79,6 +91,11 @@
 	white-space: pre-wrap;
 	flex: 1;
 }
+@media screen and (max-width: 420px) {
+	.content {
+		margin-bottom: 10px;
+	}
+}
 
 ::-webkit-scrollbar {
 	display: none;
@@ -86,7 +103,6 @@
 
 .message {
 	color: var(--hp4);
-	margin: 0 1rem 1rem 1rem;
 	padding-bottom: 1rem;
 	border-bottom: 1px solid var(--hp2);
 	font-weight: 700;
@@ -101,10 +117,16 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: stretch;
-	height: 60px;
+	height: 4rem;
 	border-radius: 1rem;
 	background-color: black;
 	border: 2px dashed var(--hp3);
+	overflow: hidden;
+}
+@media screen and (max-width: 420px) {
+	.input.wrapper {
+		height: 3rem;
+	}
 }
 
 .input.text {
@@ -119,11 +141,18 @@
 	font-size: 1.5rem;
 	font-family: inherit;
 	caret-color: var(--hp4);
+	width: 100%;
+}
+@media screen and (max-width: 420px) {
+	.input.text {
+		font-size: 1rem;
+		padding: 0.5rem;
+	}
 }
 
 .input.btn {
 	border: none;
-	border-radius: 0 1rem 1rem 0;
+	/* border-radius: 0 1rem 1rem 0; */
 	padding: 1rem;
 	font-size: 16px;
 	font-weight: bold;
@@ -132,6 +161,13 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.25rem;
+	/* height: 4rem; */
+}
+@media screen and (max-width: 420px) {
+	.input.btn {
+		height: 3rem;
+		padding: 0.5rem;
+	}
 }
 
 .input.btn:hover {

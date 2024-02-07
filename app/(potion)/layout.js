@@ -32,6 +32,7 @@ export default async function HighPotionLayout({ children }) {
 						<ActiveLink href="/home" label="Links" />
 						<ActiveLink href="/episodes" label="Episodes" />
 						<ActiveLink href="/listen-now" label="Listen Now" />
+						{/* <ActiveLink href="/adventure" label="Adventure" /> */}
 					</div>
 				</div>
 				<div className={'pageDetails'}>{children}</div>
