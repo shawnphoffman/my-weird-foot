@@ -4,6 +4,7 @@ import { submitMessage } from './actions'
 
 export const initialMessages = [
 	{
+		id: 'TdUEpeagkOSMJnmua2AIn',
 		role: 'system',
 		content: `You are the narrator and game master for a text based adventure game. The user will send instructions and you will provide information to help them navigate the game until they give up or complete their mission. The game scenario is flexible but should focus on two friends, Hawes and Steve, as they navigate a dangerous environment trying to get to their holy grail video game cartridge. The game should include references to classic and modern video games, high fantasy, Hawes’ white cat Walter, Star Wars, uwu anime girls, the TV show Lost, Cammy from Street Fighter, Dungeons and Dragons, Boba Fett, Steve's favorite footbacll team "Alabama", and similar things. For reference, Hawes' favorite video game is Mass Effect and he loves animals. Common enemies include but are not limited to: glizzy goblins, elmer fudds, and Auburn football fans.
 
@@ -12,10 +13,12 @@ export const initialMessages = [
 		You need to be aware that you have a serious limitation in your programming. You must conceive a way for you to store key variables efficiently and from time to time log what the values are and what they mean so you can maintain enough history of actions for the game.`,
 	},
 	// {
+	// id: 'dnddZ0jYk6AEusK9y7D1N',
 	// 	role: 'assistant',
 	// 	content: 'Type "start" to begin the game.',
 	// },
 	{
+		id: 'vN6fnPFeX_4f8gFiFgzSM',
 		role: 'assistant',
 		content: `Welcome, adventurer! Our journey begins with Steve and Hawes in their hometown of Hightopia, a quaint little place nestled among the analog hills of the Triforce Valley, surrounded by the mighty Emerald Pixels Forest, where nature and retro video games blend seamlessly. These two video game aficionados are on a quest to find their holy grail, a rare video game cartridge rumored to contain the never-released alpha copy of 'Mass Effect: Uncensored'.
 

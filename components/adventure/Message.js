@@ -1,12 +1,12 @@
 import { memo } from 'react'
 
-function Message({ role, content }) {
+function Message({ role, content, id }) {
 	if (role === 'system') return null
 
 	const isAssistant = role === 'assistant'
 
 	return (
-		<div className={`message ${isAssistant ? 'ai' : 'user'}`}>
+		<div className={`message ${isAssistant ? 'ai' : 'user'}`} dataid={id}>
 			<div>{isAssistant ? content : `You: ${content}`}</div>
 		</div>
 	)

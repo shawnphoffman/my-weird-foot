@@ -1,5 +1,6 @@
 'use server'
 import * as Sentry from '@sentry/nextjs'
+import { nanoid } from 'nanoid'
 import OpenAI from 'openai'
 
 export const submitMessage = async (messages, prompt) => {
@@ -11,7 +12,7 @@ export const submitMessage = async (messages, prompt) => {
 
 		Sentry.captureMessage(`prompt: ${prompt.content}`)
 
-		const newMessages = messages.length > 6 ? [...messages.slice(-6), prompt] : [...messages, prompt]
+		const newMessages = (messages.length > 6 ? [...messages.slice(-6), prompt] : [...messages, prompt]).map(({ id, ...rest }) => rest)
 
 		const data = await openai.chat.completions.create({
 			model: 'gpt-3.5-turbo',
@@ -34,6 +35,7 @@ export const submitMessage = async (messages, prompt) => {
 				}
 			} else {
 				return {
+					id: nanoid(),
 					status: 'success',
 					reply,
 				}
@@ -47,7 +49,7 @@ export const submitMessage = async (messages, prompt) => {
 			}
 		}
 	} catch (error) {
-		Sentry.captureException(err)
+		Sentry.captureException(error)
 		console.error('error', error.message || error)
 		return {
 			status: 'error',

@@ -19,7 +19,7 @@ export default function Input({ value, onChange, onClick, disabled, passRef }) {
 				autoFocus={true}
 				maxLength={75}
 			/>
-			<button className="input btn" onClick={onClick} disabled={disabled}>
+			<button type="button" className="input btn" onClick={onClick} disabled={disabled}>
 				<svg className="svg-inline--fa" aria-hidden focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
 					<path
 						fill="currentColor"
