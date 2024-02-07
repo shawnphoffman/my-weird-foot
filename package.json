@@ -3,6 +3,7 @@
 	"version": "1.0.0",
 	"private": true,
 	"dependencies": {
+		"@sentry/nextjs": "^7.100.0",
 		"fast-xml-parser": "^4.3.4",
 		"fuse.js": "^6.6.2",
 		"geist": "^1.2.2",

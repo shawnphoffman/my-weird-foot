@@ -1,4 +1,4 @@
-export default async function Message({ role, content }) {
+export default function Message({ role, content }) {
 	if (role === 'system') return null
 
 	const isAssistant = role === 'assistant'

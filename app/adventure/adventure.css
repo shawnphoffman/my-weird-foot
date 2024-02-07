@@ -60,6 +60,7 @@
 	border-radius: 1rem;
 	border: 2px solid var(--hp2);
 	padding: 1rem;
+	padding-top: 0;
 	height: 100%;
 }
 @media screen and (max-width: 420px) {
@@ -106,7 +107,7 @@
 	padding-bottom: 1rem;
 	border-bottom: 1px solid var(--hp2);
 	font-weight: 700;
-
+	padding-top: 1rem;
 	&.ai {
 		color: var(--hp3);
 	}
@@ -152,7 +153,6 @@
 
 .input.btn {
 	border: none;
-	/* border-radius: 0 1rem 1rem 0; */
 	padding: 1rem;
 	font-size: 16px;
 	font-weight: bold;
@@ -161,7 +161,6 @@
 	align-items: center;
 	justify-content: center;
 	gap: 0.25rem;
-	/* height: 4rem; */
 }
 @media screen and (max-width: 420px) {
 	.input.btn {
@@ -203,4 +202,12 @@
 .clear-wrapper:hover {
 	cursor: pointer;
 	background-color: #ff886b;
+}
+
+/* Loading */
+.loading {
+	height: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }

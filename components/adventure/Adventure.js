@@ -10,12 +10,19 @@ export default function Adventure({ initialMessages, submitMessage }) {
 	const [input, setInput] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(initialMessages)
-	const [history, setHistory] = useState([])
+	// const [history, setHistory] = useState([])
 	const ref = useRef(null)
+	const inputRef = useRef(null)
 
 	useEffect(() => {
 		ref.current.scrollTo(0, Number.MAX_SAFE_INTEGER)
 	}, [messages, loading])
+
+	useEffect(() => {
+		if (!loading && inputRef.current) {
+			inputRef.current.focus()
+		}
+	}, [loading])
 
 	const handleSubmit = async () => {
 		setLoading(true)
@@ -23,6 +30,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 			role: 'user',
 			content: input,
 		}
+		setInput(() => '')
 
 		setMessages([...messages, prompt])
 		try {
@@ -37,7 +45,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 						content: res,
 					},
 				])
-				setHistory(history => [...history, { question: input, answer: res }])
+				// setHistory(history => [...history, { question: input, answer: res }])
 			}
 		} catch (error) {
 			console.error('error', { error })
@@ -49,7 +57,6 @@ export default function Adventure({ initialMessages, submitMessage }) {
 				},
 			])
 		}
-		setInput('')
 		setLoading(false)
 	}
 
@@ -62,7 +69,13 @@ export default function Adventure({ initialMessages, submitMessage }) {
 					})}
 					{loading && <Loading />}
 				</div>
-				<Input disabled={loading} value={input} onChange={e => setInput(e.target.value)} onClick={input ? handleSubmit : undefined} />
+				<Input
+					disabled={loading}
+					value={input}
+					onChange={e => setInput(e.target.value)}
+					onClick={input ? handleSubmit : undefined}
+					passRef={inputRef}
+				/>
 			</div>
 		</div>
 	)
