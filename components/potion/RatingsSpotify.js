@@ -1,4 +1,5 @@
 import { getSpotifyReviews } from 'app/(potion)/actions'
+
 import styles from './Ratings.module.css'
 
 export default async function RatingsSpotify() {
