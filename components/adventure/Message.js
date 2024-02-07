@@ -1,4 +1,6 @@
-export default function Message({ role, content }) {
+import { memo } from 'react'
+
+function Message({ role, content }) {
 	if (role === 'system') return null
 
 	const isAssistant = role === 'assistant'
@@ -9,3 +11,5 @@ export default function Message({ role, content }) {
 		</div>
 	)
 }
+
+export default memo(Message)

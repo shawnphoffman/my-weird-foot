@@ -1,18 +1,25 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useRef, useState } from 'react'
 
 import Input from 'components/adventure/Input'
 import Loading from 'components/adventure/Loading'
 import Message from 'components/adventure/Message'
 
-export default function Adventure({ initialMessages, submitMessage }) {
+function Adventure({ initialMessages, submitMessage }) {
 	const [input, setInput] = useState('')
+	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(initialMessages)
 	// const [history, setHistory] = useState([])
 	const ref = useRef(null)
 	const inputRef = useRef(null)
+
+	const handleInputChange = useCallback(e => {
+		// startTransition(() => {
+		setInput(() => e.target.value)
+		// })
+	}, [])
 
 	useEffect(() => {
 		ref.current.scrollTo(0, Number.MAX_SAFE_INTEGER)
@@ -24,31 +31,34 @@ export default function Adventure({ initialMessages, submitMessage }) {
 		}
 	}, [loading])
 
-	const handleSubmit = async () => {
+	// TODO switch this to form.submit to avoid performance issues
+	const handleSubmit = useCallback(async () => {
 		setLoading(true)
 		const prompt = {
 			role: 'user',
 			content: input,
 		}
-		setInput(() => '')
 
 		setMessages([...messages, prompt])
 		try {
 			const data = await submitMessage(messages, prompt)
-			console.log('then', { data })
-			if (!!data?.choices[0]) {
-				const res = data?.choices[0].message.content
+			console.log('submitMessage.data', { data })
+			if (data.status === 'success') {
+				const reply = data.reply
 				setMessages(messages => [
 					...messages,
 					{
 						role: 'assistant',
-						content: res,
+						content: reply,
 					},
 				])
+				setInput(() => '')
 				// setHistory(history => [...history, { question: input, answer: res }])
+			} else {
+				setError(data.error || 'Something went wrong. Please try again...')
 			}
 		} catch (error) {
-			console.error('error', { error })
+			console.error('submitMessage.catch', { error })
 			setMessages(messages => [
 				...messages,
 				{
@@ -58,19 +68,27 @@ export default function Adventure({ initialMessages, submitMessage }) {
 			])
 		}
 		setLoading(false)
-	}
+	}, [input, messages, submitMessage])
 
 	return (
-		<div className="adventure">
-			<div className="column">
-				<div className="content" ref={ref}>
-					{messages.map((el, i) => {
-						return <Message key={i} role={el.role} content={el.content} />
-					})}
-					{loading && <Loading />}
-				</div>
-				<Input disabled={loading} value={input} onChange={e => setInput(e.target.value)} onClick={handleSubmit} passRef={inputRef} />
+		<>
+			<div className="content" ref={ref}>
+				{messages.map((el, i) => {
+					return <Message key={i} role={el.role} content={el.content} />
+				})}
+				{error && (
+					<div className="error">
+						<span>Error: {error}</span>
+						<button type="button" onClick={handleSubmit}>
+							Try Again
+						</button>
+					</div>
+				)}
+				{loading && <Loading />}
 			</div>
-		</div>
+			<Input disabled={loading} value={input} onChange={handleInputChange} onClick={handleSubmit} passRef={inputRef} />
+		</>
 	)
 }
+
+export default memo(Adventure)
