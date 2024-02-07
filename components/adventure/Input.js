@@ -2,7 +2,7 @@
 
 export default function Input({ value, onChange, onClick, disabled, passRef }) {
 	const handleKeyDown = e => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' && value.length > 0) {
 			onClick()
 		}
 	}

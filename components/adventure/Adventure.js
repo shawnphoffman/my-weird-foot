@@ -69,13 +69,7 @@ export default function Adventure({ initialMessages, submitMessage }) {
 					})}
 					{loading && <Loading />}
 				</div>
-				<Input
-					disabled={loading}
-					value={input}
-					onChange={e => setInput(e.target.value)}
-					onClick={input ? handleSubmit : undefined}
-					passRef={inputRef}
-				/>
+				<Input disabled={loading} value={input} onChange={e => setInput(e.target.value)} onClick={handleSubmit} passRef={inputRef} />
 			</div>
 		</div>
 	)
