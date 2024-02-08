@@ -106,7 +106,7 @@ function Adventure({ initialMessages, submitMessage }) {
 				setError(data.error || 'Something went wrong. Please try again...')
 			}
 		} catch (error) {
-			Sentry.captureException(err)
+			Sentry.captureException(error)
 			console.error('submitMessage.catch', { error })
 			setMessages(messages => [
 				...messages,
