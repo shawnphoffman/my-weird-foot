@@ -12,26 +12,10 @@ const storageKey = 'hp:adventure:messages'
 const isServer = typeof window === 'undefined'
 
 function Adventure({ initialMessages, submitMessage }) {
-	// const [local] = useState(() => {
-	// 	try {
-	// 		if (!isServer) {
-	// 			const storage = window.localStorage.getItem(storageKey)
-	// 			if (storage === null || storage === undefined) {
-	// 				return initialMessages
-	// 			}
-	// 			return storage ? JSON.parse(storage) : initialMessages
-	// 		}
-	// 		return initialMessages
-	// 	} catch (err) {
-	// 		Sentry.captureException(err)
-	// 		return initialMessages
-	// 	}
-	// })
 	const [input, setInput] = useState('')
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(() => initialMessages)
-	// const [history, setHistory] = useState([])
 	const ref = useRef(null)
 	const inputRef = useRef(null)
 	const initRef = useRef(false)
@@ -92,7 +76,7 @@ function Adventure({ initialMessages, submitMessage }) {
 		try {
 			const data = await submitMessage(messages, prompt)
 			console.log('submitMessage.data', { data })
-			if (data.status === 'success') {
+			if (data && data.status === 'success') {
 				const { reply, id } = data
 				saveResp = {
 					role: 'assistant',
@@ -103,7 +87,7 @@ function Adventure({ initialMessages, submitMessage }) {
 				setInput(() => '')
 				// setHistory(history => [...history, { question: input, answer: res }])
 			} else {
-				setError(data.error || 'Something went wrong. Please try again...')
+				setError(data?.error || 'Something went wrong. Please try again...')
 			}
 		} catch (error) {
 			Sentry.captureException(error)
