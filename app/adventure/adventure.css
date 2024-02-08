@@ -152,6 +152,7 @@
 }
 
 .input.btn {
+	color: var(--bg);
 	border: none;
 	padding: 1rem;
 	font-size: 16px;
@@ -248,6 +249,7 @@
 }
 
 .clear {
+	color: var(--bg);
 	border: none;
 	border-radius: 0.5rem;
 	margin-top: 0.25rem;
