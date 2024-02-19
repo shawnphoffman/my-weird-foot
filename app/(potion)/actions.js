@@ -1,8 +1,36 @@
 'use server'
 
 import { XMLParser } from 'fast-xml-parser'
+import { sanitize } from 'isomorphic-dompurify'
 
 import { rssFeedUrl, spotifyUrl } from './home/links'
+
+function replaceHtmlLinks(htmlString) {
+	const hrefRegex = /<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi
+	htmlString = htmlString.replace(hrefRegex, (match, href) => href)
+
+	const brRegex = /<br\s*\/?>/gi
+	htmlString = htmlString.replace(brRegex, '')
+
+	return htmlString
+}
+
+function convertPToLineBreaks(input) {
+	// Use regular expression to match <p> tags with content
+	const regex = /<p>(.*?)<\/p>/g
+
+	// Replace <p> tags with their content, adding line breaks
+	const result = input.replace(regex, (match, group) => {
+		if (group.trim() !== '') {
+			return group + '\n'
+			// return group + '\n\n'
+		} else {
+			return '' // Remove empty <p> tags
+		}
+	})
+
+	return result
+}
 
 export async function getReviews() {
 	try {
@@ -48,7 +76,8 @@ export async function getEpisodes() {
 			guid: ep.guid['#text'],
 			title: ep.title,
 			imgSrc: ep['itunes:image']['@_href'],
-			summary: ep['itunes:summary'],
+			// summary: sanitize(convertPToLineBreaks(ep['itunes:summary'].replace(/<p><br><\/p>|\n/gim, ''))),
+			summary: sanitize(replaceHtmlLinks(convertPToLineBreaks(ep['itunes:summary'].replace(/<p><br><\/p>|\n/gim, '')))),
 			link: ep.link,
 			pubDate: ep.pubDate,
 		}))

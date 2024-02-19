@@ -30,7 +30,7 @@ export default async function HighPotionLayout({ children }) {
 					<Image className={'headerLogo'} alt="High Potion" src={highPotionLogo} width={500} height={165} priority />
 					<div className="navContainer">
 						<ActiveLink href="/home" label="Links" />
-						{/* <ActiveLink href="/episodes" label="Episodes" /> */}
+						<ActiveLink href="/episodes" label="Episodes" />
 						<ActiveLink href="/listen-now" label="Listen Now" />
 						<ActiveLink href="/adventure" label="Adventure" />
 					</div>
