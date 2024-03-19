@@ -3,7 +3,7 @@
 import { XMLParser } from 'fast-xml-parser'
 import { sanitize } from 'isomorphic-dompurify'
 
-import { rssFeedUrl, spotifyUrl } from './home/links'
+import { appleRatingUrl, rssFeedUrl, spotifyUrl } from './home/links'
 
 function replaceHtmlLinks(htmlString) {
 	const hrefRegex = /<a\s+(?:[^>]*?\s+)?href="([^"]*)"[^>]*>(.*?)<\/a>/gi
@@ -34,7 +34,9 @@ function convertPToLineBreaks(input) {
 
 export async function getReviews() {
 	try {
-		const res = await fetch('https://api.shawn.party/api/high-potion/reviews', { next: { revalidate: 60 * 60 * 1 } })
+		const res = await fetch(`https://api.shawn.party/api/pod-data/apple?url=${appleRatingUrl}`, {
+			next: { revalidate: 60 * 60 * 1 },
+		})
 		const data = await res.json()
 		const { rating, ratingsUrl, reviews } = data
 

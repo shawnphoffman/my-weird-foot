@@ -1,6 +1,8 @@
 export const spotifyId = '3Di7qFLy6FoNg6zcBGaOnK'
 export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
 export const applePodcastId = '1571377051'
+export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
+export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
 export const rssFeedUrl = 'https://anchor.fm/s/5dc2916c/podcast/rss'
 
 const items = [
