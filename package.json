@@ -4,6 +4,7 @@
 	"private": true,
 	"dependencies": {
 		"@sentry/nextjs": "^7.101.1",
+		"@vercel/analytics": "^1.2.2",
 		"fast-xml-parser": "^4.3.4",
 		"fuse.js": "^6.6.2",
 		"geist": "^1.2.2",

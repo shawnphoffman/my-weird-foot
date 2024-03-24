@@ -1,5 +1,6 @@
 import './global.css'
 
+import { Analytics } from '@vercel/analytics/react'
 import { Open_Sans } from 'next/font/google'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
@@ -25,6 +26,7 @@ export default async function RootLayout({ children }) {
 			</head>
 			<body>
 				<div className="scroller">{children}</div>
+				<Analytics />
 			</body>
 		</html>
 	)
