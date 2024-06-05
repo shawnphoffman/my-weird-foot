@@ -5,16 +5,12 @@ import { getEpisodes } from 'app/(potion)/actions'
 // import Episode from 'components/Episode'
 import Episodes from 'components/potion/Episodes'
 
-export const revalidate = 60 * 60 // 1 hour
+export const revalidate = 3600
 export const dynamic = 'force-dynamic'
 
 const EpisodesClient = async () => {
-	const [data] = await Promise.all([
-		getEpisodes(),
-		//
-		// new Promise(resolve => setTimeout(resolve, 5000)),
-	])
-	// return data.episodes.map(ep => <Episode episode={ep} key={ep.guid} />)
+	// await new Promise(resolve => setTimeout(resolve, 5000))
+	const data = await getEpisodes()
 
 	return <Episodes episodes={data.episodes} />
 }
