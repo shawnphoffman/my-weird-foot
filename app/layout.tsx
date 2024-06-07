@@ -21,13 +21,11 @@ export const metadata = {
 
 export default async function RootLayout({ children }) {
 	return (
-		<html lang="en" className={openSans.className}>
-			<head>
-				<script src="https://kit.fontawesome.com/d7ccc5bb1a.js" crossOrigin="anonymous" async defer></script>
-			</head>
-			<body>
-				<div className="scroller">{children}</div>
-				<Analytics />
+		<html lang="en" className={`${openSans.className} bg-hp-bg bg-gradient-to-b from-hp-bg to-black p-0 m-0 overflow-x-hidden w-dvw`}>
+			<body className="p-4 mx-auto my-0 text-white min-h-dvh w-dvw">
+				{children}
+				{/* EXTRAS */}
+				{process.env.VERCEL_ENV && <Analytics />}
 			</body>
 		</html>
 	)

@@ -11,6 +11,9 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				hp: {
+					bg: 'rgb(0, 30, 0)',
+				},
 				// brand: {
 				hp1: '#175200',
 				hp2: '#7aeb1f',
