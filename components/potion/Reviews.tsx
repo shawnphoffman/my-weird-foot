@@ -1,10 +1,10 @@
-import { getReviews } from '@/app/(potion)/actions'
+import { getAppleReviews } from '@/app/data/actions'
+import Stars from '@/components/core/Stars'
 
 import styles from './Reviews.module.css'
-import Stars from './Stars'
 
 export default async function Reviews() {
-	const { reviews } = await getReviews()
+	const { reviews } = await getAppleReviews()
 
 	if (!reviews) return null
 

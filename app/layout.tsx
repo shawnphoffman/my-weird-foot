@@ -1,4 +1,5 @@
-import './global.css'
+import '@/app/global.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import { Open_Sans } from 'next/font/google'

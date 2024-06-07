@@ -4,11 +4,10 @@ import { useCallback, useEffect, useRef } from 'react'
 
 export default function BackgroundAudio() {
 	const audioSrc = '/playerSelect.mp3'
-	const audioRef = useRef()
+	const audioRef = useRef<HTMLAudioElement | undefined>()
 
 	const onClick = useCallback(() => {
-		const current = audioRef.current
-		current.play()
+		audioRef.current?.play()
 	}, [])
 
 	useEffect(() => {

@@ -1,120 +1,98 @@
-export const spotifyId = '3Krn2ePCbILvzORISjh2PT'
+import { faDiscord, faSpotify, faTwitch, faXTwitter } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/brands'
+import { faRssSquare, faSnake } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
+import { faAt, faPodcast } from '@awesome.me/kit-d7ccc5bb1a/icons/duotone/solid'
+import { faCastbox, faGoodpods, faOvercast, faTeepublic } from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
+
+export const spotifyId = '3Di7qFLy6FoNg6zcBGaOnK'
 export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
-export const applePodcastId = '1009917662'
+export const applePodcastId = '1571377051'
 export const applePodcastUrl = `https://podcasts.apple.com/us/podcast/id${applePodcastId}`
 export const appleRatingUrl = `${applePodcastUrl}?see-all=reviews`
-export const rssFeedUrl = 'https://feed.podbean.com/blueharvestpodcast/feed.xml'
-export const goodpodsUrl = 'https://goodpods.com/podcasts/blue-harvest-a-star-wars-podcast-84967'
+export const rssFeedUrl = 'https://anchor.fm/s/5dc2916c/podcast/rss'
+export const goodpodsUrl = 'https://goodpods.com/podcasts/high-potion-265438'
 
-const items = [
+type Link = {
+	title: string
+	href: string
+	icon: string
+	background: string
+	color?: string
+}
+
+const items: Link[] = [
 	{
 		title: 'Twitter',
-		href: 'https://twitter.com/BlueHarvestPod',
-		icon: 'fa-brands fa-x-twitter',
+		href: 'https://twitter.com/HighPotionPod',
 		background: 'bg-twitter',
-	},
-	{
-		title: 'Patreon',
-		href: 'https://www.patreon.com/blueharvestpodcast',
-		icon: 'fa-brands fa-patreon',
-		background: 'bg-patreon',
-	},
-	{
-		title: 'Apple Podcasts',
-		href: applePodcastUrl,
-		icon: 'fa-duotone fa-podcast',
-		background: 'bg-applepodcasts',
+		icon: faXTwitter,
 	},
 	{
 		title: 'Spotify',
 		href: spotifyUrl,
-		icon: 'fa-brands fa-spotify',
 		background: 'bg-spotify',
+		icon: faSpotify,
 	},
 	{
-		title: 'Voicemails & Emails',
-		href: 'mailto:blueharvestpodcast@gmail.com',
-		icon: 'fa-duotone fa-at',
-		background: 'bg-email',
-	},
-	{
-		title: 'Bluesky',
-		href: 'https://bsky.app/profile/blueharvest.bsky.social',
-		icon: 'fa-brands fa-bluesky',
-		background: 'bg-bluesky',
-	},
-	{
-		title: 'Overcast',
-		href: 'https://overcast.fm/itunes1009917662',
-		icon: 'fak fa-overcast-1',
-		background: 'bg-overcast',
-	},
-	{
-		title: 'Goodpods',
-		href: goodpodsUrl,
-		icon: 'fak fa-goodpods',
-		background: 'bg-goodpods',
-		color: 'text-black',
-	},
-	{
-		title: 'PodBean',
-		href: 'https://blueharvestpodcast.podbean.com/',
-		icon: 'fa-solid fa-coffee-beans',
-		background: 'bg-podbean',
-	},
-	{
-		title: 'YouTube',
-		href: 'https://www.youtube.com/BlueHarvestAStarWarsPodcast',
-		icon: 'fa-brands fa-youtube',
-		background: 'bg-youtube',
-	},
-	{
-		title: 'Instagram',
-		href: 'https://www.instagram.com/blueharvestpod',
-		icon: 'fa-brands fa-instagram',
-		background: 'bg-instagram',
-	},
-	{
-		title: 'Threads',
-		href: 'https://www.threads.net/@blueharvestpod',
-		icon: 'fak fa-threads',
-		background: 'bg-threads',
-	},
-	{
-		title: 'RSS',
-		href: 'https://feed.podbean.com/blueharvestpodcast/feed.xml',
-		icon: 'fa-solid fa-square-rss',
-		background: 'bg-rss',
+		title: 'Apple Podcasts',
+		href: `https://podcasts.apple.com/us/podcast/high-potion/id${applePodcastId}`,
+		background: 'bg-applepodcasts',
+		icon: faPodcast,
 	},
 	{
 		title: 'Twitch',
-		href: 'https://www.twitch.tv/blueharvestpod',
-		icon: 'fa-brands fa-twitch',
+		href: 'http://www.twitch.tv/blueharvestpod',
 		background: 'bg-twitch',
+		icon: faTwitch,
+	},
+	{
+		title: 'Emails',
+		href: 'mailto:highpotionpod@gmail.com',
+		icon: faAt,
+		background: 'bg-email',
 	},
 	{
 		title: 'Merch Store',
-		href: 'https://www.teepublic.com/user/blueharvestpodcast',
-		icon: 'fak fa-teepublic',
+		href: 'https://www.teepublic.com/user/high-potion-podcast',
+		icon: faTeepublic,
 		background: 'bg-teepublic',
+	},
+	{
+		title: 'Overcast',
+		// overcast://x-callback-url/add?url=https%3A%2F%2Ffeed.podbean.com%2Fblueharvestpodcast%2Ffeed.xml
+		href: `https://overcast.fm/itunes${applePodcastId}`,
+		icon: faOvercast,
+		background: 'bg-overcast',
 	},
 	{
 		title: 'Discord',
 		href: 'https://discord.gg/CZFSuSpmD8',
-		icon: 'fa-brands fa-discord',
+		icon: faDiscord,
 		background: 'bg-discord',
 	},
 	{
-		title: 'High Potion',
-		href: 'https://myweirdfoot.com/home',
-		icon: 'fa-duotone fa-flask-round-poison',
-		background: 'bg-lime-700',
+		title: 'RSS',
+		href: rssFeedUrl,
+		icon: faRssSquare,
+		background: 'bg-rss',
 	},
 	{
 		title: 'Stoned Cobra',
 		href: 'https://stonedcobra.bandcamp.com/',
-		icon: 'fa-solid fa-snake',
-		background: 'bg-lime-900',
+		icon: faSnake,
+		background: 'bg-hp1',
+	},
+	{
+		title: 'Goodpods',
+		href: goodpodsUrl,
+		icon: faGoodpods,
+		background: 'bg-goodpods',
+		color: 'text-black',
+	},
+	{
+		title: 'Castbox',
+		href: 'https://castbox.fm/channel/High-Potion-id4226986',
+		background: 'bg-castbox',
+		icon: faCastbox,
 	},
 ]
 

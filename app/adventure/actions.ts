@@ -28,7 +28,7 @@ export const submitMessage = async (messages, prompt) => {
 			const reply = data?.choices[0]?.message?.content
 			if (!reply) {
 				console.warn('no reply', data)
-				Sentry.captureMessage(`no reply: ${prompt}`, data)
+				// Sentry.captureMessage(`no reply: ${prompt}`, data)
 				return {
 					status: 'error',
 					error: 'No reply recieved. Please try again...',
@@ -42,7 +42,7 @@ export const submitMessage = async (messages, prompt) => {
 			}
 		} else {
 			console.warn('no choice', data)
-			Sentry.captureMessage(`no choice: ${prompt}`, data)
+			// Sentry.captureMessage(`no choice: ${prompt}`, data)
 			return {
 				status: 'error',
 				error: 'No choices received. Please try again...',

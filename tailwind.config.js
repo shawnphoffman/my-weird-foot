@@ -11,6 +11,13 @@ module.exports = {
 	theme: {
 		extend: {
 			colors: {
+				// brand: {
+				hp1: '#175200',
+				hp2: '#7aeb1f',
+				hp3: '#c0f321',
+				hp4: '#fdff43',
+				error: '#f73636',
+				// },
 				boba: {
 					gold: 'rgb(205 157 68)', // stars, links
 					green: 'rgb(162, 197, 183)',

@@ -1,6 +1,6 @@
 'use client'
 
-import { spotifyId } from '../home/links'
+import { spotifyId } from '@/app/data/links'
 
 export default function ListenNow({}) {
 	return (

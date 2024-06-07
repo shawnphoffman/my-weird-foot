@@ -2,9 +2,9 @@ import './hp_global.css'
 
 import Image from 'next/image'
 
+import { applePodcastId } from '@/app/data/links'
 import ActiveLink from '@/components/potion/ActiveLink'
 
-import { applePodcastId } from './home/links'
 import highPotionLogo from './high-potion.png'
 
 export const metadata = {

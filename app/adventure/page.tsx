@@ -2,7 +2,7 @@ import Adventure from '@/components/adventure/Adventure'
 
 import { submitMessage } from './actions'
 
-export const initialMessages = [
+const initialMessages = [
 	{
 		id: 'TdUEpeagkOSMJnmua2AIn',
 		role: 'system',

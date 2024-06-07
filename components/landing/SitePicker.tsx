@@ -1,6 +1,7 @@
 'use client'
 
 import { memo, useCallback, useEffect, useLayoutEffect, useState } from 'react'
+import { useRouter } from 'next/navigation'
 
 import BackgroundAudio from './BackgroundAudio'
 import Character from './Character'
@@ -11,17 +12,18 @@ const linkBlueHarvest = 'https://blueharvest.rocks'
 const linkHighPotion = '/home'
 
 export default function SitePicker() {
-	const [selectedIndex, setSelectedIndex] = useState()
+	const [selectedIndex, setSelectedIndex] = useState<number | undefined>()
+	const router = useRouter()
 
 	const handleClick = useCallback(
 		id => {
 			if (selectedIndex === id) {
-				window.location = selectedIndex === 1 ? linkBlueHarvest : linkHighPotion
+				router.push(selectedIndex === 1 ? linkBlueHarvest : linkHighPotion)
 			} else {
 				setSelectedIndex(id)
 			}
 		},
-		[selectedIndex]
+		[router, selectedIndex]
 	)
 
 	const onKeyDown = useCallback(
@@ -32,10 +34,10 @@ export default function SitePicker() {
 				return
 			}
 			if (event.key === 'Enter' && !!selectedIndex) {
-				window.location = selectedIndex === 1 ? linkBlueHarvest : linkHighPotion
+				router.push(selectedIndex === 1 ? linkBlueHarvest : linkHighPotion)
 			}
 		},
-		[selectedIndex]
+		[router, selectedIndex]
 	)
 
 	useEffect(() => {

@@ -22,8 +22,11 @@ const fuseOptions = {
 		},
 	],
 }
+type EpisodeListProps = {
+	episodes: any[]
+}
 
-const EpisodeList = memo(({ episodes }) => {
+const EpisodeList = memo(({ episodes }: EpisodeListProps) => {
 	if (episodes.length === 0) return <div>No episodes found...</div>
 
 	return episodes.map(ep => <Episode episode={ep} key={ep.guid} />)

@@ -1,11 +1,11 @@
 import { Suspense } from 'react'
 
-import LinkCard from '@/components/potion/LinkCard'
-import RatingsApple from '@/components/potion/RatingsApple'
-import RatingsSpotify from '@/components/potion/RatingsSpotify'
+import items from '@/app/data/links'
+import LinkCard from '@/components/core/LinkCard'
+import RatingsApple from '@/components/core/RatingsApple'
+import RatingsGoodpods from '@/components/core/RatingsGoodpods'
+import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/potion/Reviews'
-
-import items from './links'
 
 export default async function HighPotionHome({}) {
 	return (
@@ -14,9 +14,10 @@ export default async function HighPotionHome({}) {
 				A podcast where hosts Steve Krothe and Hawes Burkhardt talk about video games. Yes, another video game podcast hosted by two dudes.
 				Check us out though, it&apos;s a lot of fun!
 			</div>
-			<div className="ratingsWrapper">
-				<Suspense>
+			<div className="flex flex-row flex-wrap items-center justify-center gap-2 mb-2">
+				<Suspense fallback="">
 					<RatingsApple />
+					<RatingsGoodpods />
 					<RatingsSpotify />
 				</Suspense>
 			</div>
@@ -24,13 +25,10 @@ export default async function HighPotionHome({}) {
 				{items.map((item, i) => {
 					return (
 						<LinkCard
-							i={i}
 							key={item.title}
 							title={item.title}
-							subtitle={item.subtitle}
 							link={item.href}
 							icon={item.icon}
-							cover={item.image}
 							bg={item.background}
 							color={item.color}
 						></LinkCard>

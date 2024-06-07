@@ -46,11 +46,3 @@ body {
 	padding: 0px 16px 0px 16px;
 	overflow: scroll;
 }
-
-a {
-	color: var(--text);
-	text-decoration: none;
-}
-a:hover {
-	color: var(--text);
-}

@@ -16,8 +16,8 @@ function Adventure({ initialMessages, submitMessage }) {
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(false)
 	const [messages, setMessages] = useState(() => initialMessages)
-	const ref = useRef(null)
-	const inputRef = useRef(null)
+	const ref = useRef<HTMLDivElement>(null)
+	const inputRef = useRef<HTMLInputElement | null>(null)
 	const initRef = useRef(false)
 
 	const initialize = () => {
@@ -47,7 +47,7 @@ function Adventure({ initialMessages, submitMessage }) {
 	}, [])
 
 	useEffect(() => {
-		ref.current.scrollTo(0, Number.MAX_SAFE_INTEGER)
+		ref.current!.scrollTo(0, Number.MAX_SAFE_INTEGER)
 	}, [messages, loading])
 
 	useEffect(() => {
@@ -107,7 +107,7 @@ function Adventure({ initialMessages, submitMessage }) {
 	const handleClear = useCallback(() => {
 		setInput(() => '')
 		setMessages(() => initialMessages)
-		window.localStorage.clear(storageKey)
+		window.localStorage.removeItem(storageKey)
 	}, [initialMessages])
 
 	return (

@@ -6,7 +6,7 @@ function Message({ role, content, id }) {
 	const isAssistant = role === 'assistant'
 
 	return (
-		<div className={`message ${isAssistant ? 'ai' : 'user'}`} dataid={id}>
+		<div className={`message ${isAssistant ? 'ai' : 'user'}`} data-id={id}>
 			<div>{isAssistant ? content : `You: ${content}`}</div>
 		</div>
 	)
