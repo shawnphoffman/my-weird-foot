@@ -39,7 +39,7 @@ async function getEpisodes() {
 export default async function EpisodesPage() {
 	const data = await getEpisodes()
 	return (
-		<div className="w-full max-w-3xl p-4 border-4 rounded-xl border-boba-border bg-black/50">
+		<div className="w-full max-w-3xl">
 			<Episodes episodes={data.episodes} />
 		</div>
 	)

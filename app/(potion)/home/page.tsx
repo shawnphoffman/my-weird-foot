@@ -9,7 +9,7 @@ import RatingsGoodpods from '@/components/core/RatingsGoodpods'
 import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/core/Reviews'
 
-export default async function HighPotionHome({}) {
+export default async function HighPotionHome() {
 	return (
 		<>
 			<div className="w-full max-w-3xl text-base leading-normal sm:text-lg">

@@ -27,7 +27,7 @@ type EpisodeListProps = {
 }
 
 const EpisodeList = memo(({ episodes }: EpisodeListProps): any => {
-	if (episodes.length === 0) return <div className="m-4 font-bold text-xl text-boba-green">No episodes found...</div>
+	if (episodes.length === 0) return <div className="m-4 text-xl font-bold text-white">No episodes found...</div>
 
 	return episodes.map(ep => <Episode episode={ep} key={ep.guid} />)
 })
@@ -64,13 +64,13 @@ const Episodes = ({ episodes }) => {
 				<input
 					type="text"
 					id="search"
-					className="block w-full px-4 py-2 text-base leading-5 text-white rounded-lg placeholder-boba-grayn border-boba-grayn border-2 bg-black/50  focus-visible:outline-boba-red focus-visible:outline-offset-2 focus-visible:outline-dashed focus-visible:outline-2"
+					className="block w-full px-4 py-3 text-base leading-5 text-white rounded-lg placeholder-white/50 bg-black/50 focus-visible:outline-hp2 focus-visible:outline-offset-2 focus-visible:outline-dashed"
 					placeholder="Search episodes..."
 					onChange={handleSearch}
 				/>
 			</div>
 
-			<div className="flex flex-col items-center w-full border-t-2 divide-y-2 divide-boba-border border-t-boba-border">
+			<div className="flex flex-col items-center w-full px-4 divide-y divide-hp4 rounded-xl bg-black/50">
 				<Suspense fallback={<Loading />}>
 					<EpisodeList episodes={filtered} />
 				</Suspense>

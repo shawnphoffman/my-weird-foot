@@ -18,7 +18,7 @@ const ActiveLink = ({ children, href, fuzzy, className, ...rest }: Props) => {
 
 	const conditionalClasses = classnames(
 		className,
-		isActive ? 'underline underline-offset-[6px] decoration-1 decoration-hp4' : 'text-white hover:text-hp3'
+		isActive ? 'underline underline-offset-[6px] decoration-dashed decoration-hp4' : 'text-white hover:text-hp3'
 	)
 
 	return (

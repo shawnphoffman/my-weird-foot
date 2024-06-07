@@ -1,6 +1,6 @@
 import { groq } from 'next-sanity'
 
-const podId = '6c03379a-0584-4e22-9fd2-12525f75e6af'
+const podId = '33a22e16-f2c4-437d-b5db-47ad708d6442'
 
 // =======================
 // POST QUERIES
