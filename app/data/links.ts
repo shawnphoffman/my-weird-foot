@@ -39,47 +39,10 @@ const items: Link[] = [
 		icon: faPodcast,
 	},
 	{
-		title: 'Twitch',
-		href: 'http://www.twitch.tv/blueharvestpod',
-		background: 'bg-twitch',
-		icon: faTwitch,
-	},
-	{
 		title: 'Emails',
 		href: 'mailto:highpotionpod@gmail.com',
 		icon: faAt,
 		background: 'bg-email',
-	},
-	{
-		title: 'Merch Store',
-		href: 'https://www.teepublic.com/user/high-potion-podcast',
-		icon: faTeepublic,
-		background: 'bg-teepublic',
-	},
-	{
-		title: 'Overcast',
-		// overcast://x-callback-url/add?url=https%3A%2F%2Ffeed.podbean.com%2Fblueharvestpodcast%2Ffeed.xml
-		href: `https://overcast.fm/itunes${applePodcastId}`,
-		icon: faOvercast,
-		background: 'bg-overcast',
-	},
-	{
-		title: 'Discord',
-		href: 'https://discord.gg/CZFSuSpmD8',
-		icon: faDiscord,
-		background: 'bg-discord',
-	},
-	{
-		title: 'RSS',
-		href: rssFeedUrl,
-		icon: faRssSquare,
-		background: 'bg-rss',
-	},
-	{
-		title: 'Stoned Cobra',
-		href: 'https://stonedcobra.bandcamp.com/',
-		icon: faSnake,
-		background: 'bg-hp1',
 	},
 	{
 		title: 'Goodpods',
@@ -89,10 +52,47 @@ const items: Link[] = [
 		color: 'text-black',
 	},
 	{
+		title: 'Overcast',
+		// overcast://x-callback-url/add?url=https%3A%2F%2Ffeed.podbean.com%2Fblueharvestpodcast%2Ffeed.xml
+		href: `https://overcast.fm/itunes${applePodcastId}`,
+		icon: faOvercast,
+		background: 'bg-overcast',
+	},
+	{
+		title: 'RSS',
+		href: rssFeedUrl,
+		icon: faRssSquare,
+		background: 'bg-rss',
+	},
+	{
 		title: 'Castbox',
 		href: 'https://castbox.fm/channel/High-Potion-id4226986',
 		background: 'bg-castbox',
 		icon: faCastbox,
+	},
+	{
+		title: 'Twitch',
+		href: 'http://www.twitch.tv/blueharvestpod',
+		background: 'bg-twitch',
+		icon: faTwitch,
+	},
+	{
+		title: 'Merch Store',
+		href: 'https://www.teepublic.com/user/high-potion-podcast',
+		icon: faTeepublic,
+		background: 'bg-teepublic',
+	},
+	{
+		title: 'Discord',
+		href: 'https://discord.gg/CZFSuSpmD8',
+		icon: faDiscord,
+		background: 'bg-discord',
+	},
+	{
+		title: 'Stoned Cobra',
+		href: 'https://stonedcobra.bandcamp.com/',
+		icon: faSnake,
+		background: 'bg-hp1',
 	},
 ]
 
