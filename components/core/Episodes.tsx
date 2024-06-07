@@ -70,7 +70,7 @@ const Episodes = ({ episodes }) => {
 				/>
 			</div>
 
-			<div className="flex flex-col items-center w-full px-4 divide-y divide-hp4 rounded-xl bg-black/50">
+			<div className="flex flex-col items-center w-full px-4 divide-y divide-hp3 rounded-xl bg-black/50">
 				<Suspense fallback={<Loading />}>
 					<EpisodeList episodes={filtered} />
 				</Suspense>

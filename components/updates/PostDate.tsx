@@ -5,7 +5,7 @@ export default function PostDate({ dateString }: { dateString: string }) {
 
 	const date = parseISO(dateString)
 	return (
-		<time dateTime={dateString} className="text-xs text-boba-grayn">
+		<time dateTime={dateString} className="text-xs text-hp2">
 			{format(date, 'LLLL	d, yyyy')}
 		</time>
 	)

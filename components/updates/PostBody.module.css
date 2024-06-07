@@ -17,14 +17,14 @@
 	h2,
 	h3,
 	h4 {
-		@apply mb-4 font-bold leading-snug underline-offset-4 underline decoration-boba-border;
+		@apply mb-4 font-bold leading-snug underline underline-offset-4 decoration-hp4 decoration-dashed;
 	}
 	h2 {
-		@apply mt-10 text-3xl text-boba-green;
+		@apply mt-10 text-3xl text-hp3;
 		@apply md:text-4xl;
 	}
 	h3 {
-		@apply mt-8 text-2xl text-boba-grayn;
+		@apply mt-8 text-2xl text-hp2;
 		@apply md:text-3xl;
 	}
 	h4 {
@@ -36,7 +36,7 @@
 	/* TEXT */
 	/* ================== */
 	blockquote {
-		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-boba-red bg-white/5;
+		@apply p-4 my-4 text-xl italic font-medium leading-relaxed text-white border-s-4 border-hp3 bg-white/5;
 	}
 
 	/* ================== */
@@ -46,7 +46,7 @@
 	ol {
 		@apply space-y-1 text-white list-inside;
 		::marker {
-			@apply text-boba-grayn;
+			@apply text-hp4;
 		}
 	}
 	li ul,
@@ -64,6 +64,6 @@
 	/* LINKS */
 	/* ================== */
 	a {
-		@apply text-boba-gold decoration-boba-grayn decoration-2 underline-offset-2 hover:underline;
+		@apply text-hp3 decoration-hp4 decoration-dashed underline-offset-2 hover:underline;
 	}
 }
