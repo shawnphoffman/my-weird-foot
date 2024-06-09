@@ -1,9 +1,9 @@
 import './adventure.css'
+import '@fortawesome/fontawesome-svg-core/styles.css'
 
 import { GeistMono } from 'geist/font/mono'
 import Image from 'next/image'
 
-// import highPotionLogo from '../(potion)/high-potion.png'
 import adventureLogo from './adventure.png'
 
 export const metadata = {

@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+	--bg: #000;
+	--white: #fff;
+
+	--hp1: #175200;
+	--hp2: #7aeb1f;
+	--hp3: #c0f321;
+	--hp4: #fdff43;
+	--error: #f73636;
+}
+
 html {
 	@apply bg-hp-bg !bg-gradient-to-b from-hp-bg to-black;
 }
