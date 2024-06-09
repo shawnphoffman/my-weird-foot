@@ -1,3 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+	@apply bg-hp-bg !bg-gradient-to-b from-hp-bg to-black;
+}
+
 @media screen and (max-width: 420px) {
 	.scroller {
 		padding: 0 0.5rem;

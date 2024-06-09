@@ -23,6 +23,11 @@ module.exports = {
 	async redirects() {
 		return [
 			{
+				source: '/',
+				destination: '/landing',
+				permanent: false,
+			},
+			{
 				source: '/twitch',
 				destination: 'https://www.twitch.tv/blueharvestpod',
 				permanent: false,

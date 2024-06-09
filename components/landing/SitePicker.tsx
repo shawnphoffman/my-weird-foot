@@ -1,6 +1,6 @@
 'use client'
 
-import { memo, useCallback, useEffect, useLayoutEffect, useState } from 'react'
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 
 import BackgroundAudio from './BackgroundAudio'
@@ -9,7 +9,7 @@ import characterArray from './characterList'
 import GoButton from './GoButton'
 
 const linkBlueHarvest = 'https://blueharvest.rocks'
-const linkHighPotion = '/home'
+const linkHighPotion = `/home`
 
 export default function SitePicker() {
 	const [selectedIndex, setSelectedIndex] = useState<number | undefined>()
@@ -54,15 +54,14 @@ export default function SitePicker() {
 	}, [selectedIndex])
 
 	return (
-		<div className="container">
-			<div className="character-wrapper">
+		<div className="flex flex-col justify-center w-full h-full">
+			<div className="flex my-4 mx-auto flex-wrap justify-center bg-neutral-400 select-none max-w-[818px] max-[300px]:max-w-[150px] max-[600px]:max-w-[300px] max-[848px]:max-w-[602px] max-[848px]:bg-none">
 				{Object.keys(characterArray).map((k, i) => {
 					const c = characterArray[k]
 					return (
 						<Character
 							key={c.id}
 							id={c.id}
-							name={c.name}
 							image={c.imgSrc}
 							selected={selectedIndex === i}
 							disabled={c.disabled}

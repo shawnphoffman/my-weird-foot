@@ -20,12 +20,15 @@ export const metadata = {
 
 export default async function AdventureLayout({ children }) {
 	return (
-		<div className={`${GeistMono.className} adventureWrapper`}>
-			<div className="adventureHeader">
-				{/* <Image className="adventureLogo" alt="High Potion" src={highPotionLogo} width={500 / 3} height={165 / 3} priority /> */}
-				<Image className="adventureLogo" alt="High Potion" src={adventureLogo} width={385 / 2} height={151 / 2} priority />
-			</div>
-			<div className="adventureDetails">{children}</div>
-		</div>
+		<html>
+			<body className="px-4">
+				<div className={`${GeistMono.className} adventureWrapper`}>
+					<div className="adventureHeader">
+						<Image className="adventureLogo" alt="High Potion" src={adventureLogo} width={385 / 2} height={151 / 2} priority />
+					</div>
+					<div className="adventureDetails">{children}</div>
+				</div>
+			</body>
+		</html>
 	)
 }

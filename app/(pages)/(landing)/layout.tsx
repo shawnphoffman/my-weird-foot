@@ -1,5 +1,4 @@
-import '@/app/global.css'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import './landing.css'
 
 import { Analytics } from '@vercel/analytics/react'
 import { Open_Sans } from 'next/font/google'
@@ -19,10 +18,14 @@ export const metadata = {
 	},
 }
 
-export default async function RootLayout({ children }) {
+type Props = {
+	children: React.ReactNode
+}
+
+export default function LandingLayout({ children }: Props) {
 	return (
-		<html lang="en" className={`${openSans.className} bg-hp-bg bg-gradient-to-b from-hp-bg to-black p-0 m-0 overflow-x-hidden w-dvw`}>
-			<body className="p-4 mx-auto my-0 text-white min-h-dvh w-dvw">
+		<html lang="en" className={`${openSans.className} p-0 m-0 overflow-x-hidden w-dvw`}>
+			<body className="mx-auto my-0 text-white min-h-dvh w-dvw">
 				{children}
 				{/* EXTRAS */}
 				{process.env.VERCEL_ENV && <Analytics />}
