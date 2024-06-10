@@ -1,7 +1,21 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 
 import playerSelect from '@/components/landing/images/playerSelect@3x.png'
 import SitePicker from '@/components/landing/SitePicker'
+
+export const metadata: Metadata = {
+	title: 'My Weird Foot',
+	description: 'Landing page for Blue Harvest and High Potion podcasts',
+	metadataBase: new URL('https://myweirdfoot.com'),
+	openGraph: {
+		title: 'My Weird Foot',
+		description: 'Landing page for Blue Harvest and High Potion podcasts',
+		url: 'https://myweirdfoot.com',
+		locale: 'en_US',
+		type: 'website',
+	},
+}
 
 export default async function Landing() {
 	return (

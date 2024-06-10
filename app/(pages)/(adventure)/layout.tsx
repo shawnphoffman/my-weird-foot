@@ -7,18 +7,6 @@ import Link from 'next/link'
 
 import adventureLogo from './adventure.png'
 
-export const metadata = {
-	title: 'High Potion',
-	description: 'A video game podcast hosted by Steve Krothe and Hawes Burkhardt',
-	openGraph: {
-		title: 'High Potion',
-		description: 'A video game podcast hosted by Steve Krothe and Hawes Burkhardt',
-		url: 'https://myweirdfoot.com/home',
-		locale: 'en_US',
-		type: 'website',
-	},
-}
-
 export default async function AdventureLayout({ children }) {
 	return (
 		<html className="bg-hp-bg !bg-gradient-to-b from-hp-bg to-black">

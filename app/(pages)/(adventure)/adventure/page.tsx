@@ -1,6 +1,20 @@
+import { Metadata } from 'next'
+
 import Adventure from '@/components/adventure/Adventure'
 
 import { submitMessage } from './actions'
+
+export const metadata: Metadata = {
+	title: 'High Potion',
+	description: 'A video game podcast hosted by Steve Krothe and Hawes Burkhardt',
+	openGraph: {
+		title: 'High Potion Text Adventure',
+		description: 'A High Potion text adventure game hosted by Steve Krothe and Hawes Burkhardt',
+		url: 'https://myweirdfoot.com/adventure',
+		locale: 'en_US',
+		type: 'website',
+	},
+}
 
 const initialMessages = [
 	{

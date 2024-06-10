@@ -2,6 +2,7 @@ import { faDiscord, faSpotify, faTwitch, faXTwitter } from '@awesome.me/kit-d7cc
 import { faRssSquare, faSnake } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { faAt, faPodcast } from '@awesome.me/kit-d7ccc5bb1a/icons/duotone/solid'
 import { faCastbox, faGoodpods, faOvercast, faTeepublic } from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 
 export const spotifyId = '3Di7qFLy6FoNg6zcBGaOnK'
 export const spotifyUrl = `https://open.spotify.com/show/${spotifyId}`
@@ -14,7 +15,7 @@ export const goodpodsUrl = 'https://goodpods.com/podcasts/high-potion-265438'
 type Link = {
 	title: string
 	href: string
-	icon: string
+	icon: IconDefinition
 	background: string
 	color?: string
 }
