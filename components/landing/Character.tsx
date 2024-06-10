@@ -10,7 +10,7 @@ export default function Character({ id, image, selected, disabled, ...rest }) {
 
 	return (
 		<div
-			className={`max-[848px]:h-[150px] max-[848px]:w-[150px] h-[204px] w-[204px] disabled: flex justify-center items-center ${classes}`}
+			className={`max-[848px]:h-[150px] max-[848px]:w-[150px] max-[848px]:border-2 border-neutral-400 h-[204px] w-[204px] flex justify-center items-center ${classes}`}
 			data-name={id}
 			{...rest}
 		>
