@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export default function Loading() {
 	return (
-		<div className="loading">
+		<div className="flex items-center justify-center h-12">
 			<FontAwesomeIcon icon={faSlash} spinPulse />
 		</div>
 	)

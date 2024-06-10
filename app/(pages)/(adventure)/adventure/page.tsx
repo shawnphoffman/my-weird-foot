@@ -36,8 +36,8 @@ CURRENT STATS
 
 export default async function AdventurePage() {
 	return (
-		<div className="adventure">
-			<div className="column">
+		<div className="flex flex-row gap-4 max-w-screen-xl mx-auto my-0 w-full flex-1 bg-black rounded-2xl border-2 border-hp2 p-4 pt-0 h-full max-[420px]:p-2">
+			<div className="flex flex-col flex-1 w-full text-white justify-stretch">
 				<Adventure initialMessages={initialMessages} submitMessage={submitMessage} />
 			</div>
 		</div>

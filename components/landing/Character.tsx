@@ -9,7 +9,6 @@ export default function Character({ id, image, selected, disabled, ...rest }) {
 	const classes = classNames(disabled ? disabledClasses : enabledClasses, selected && active)
 
 	return (
-		// <div className={`character ${!!selected && 'active'} ${!!disabled && 'disabled'}`} data-name={id} {...rest}>
 		<div
 			className={`max-[848px]:h-[150px] max-[848px]:w-[150px] h-[204px] w-[204px] disabled: flex justify-center items-center ${classes}`}
 			data-name={id}
@@ -19,7 +18,3 @@ export default function Character({ id, image, selected, disabled, ...rest }) {
 		</div>
 	)
 }
-
-// ${
-// !!selected && 'active'
-// } ${!!disabled && 'disabled'}

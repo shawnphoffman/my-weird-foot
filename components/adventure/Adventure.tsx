@@ -44,7 +44,7 @@ function Adventure({ initialMessages, submitMessage }) {
 		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [])
 
-	const handleInputChange = useCallback(e => {
+	const handleInputChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
 		setInput(() => e.target.value)
 	}, [])
 
@@ -114,22 +114,32 @@ function Adventure({ initialMessages, submitMessage }) {
 
 	return (
 		<>
-			<div className="content" ref={ref} suppressHydrationWarning>
+			<div className="overflow-y-scroll mb-5 whitespace-pre-wrap flex-1 max-[420px]:mb-2" ref={ref} suppressHydrationWarning>
 				{messages.map(el => {
 					return <Message key={el.id} role={el.role} content={el.content} id={el.id} />
 				})}
 				{error && (
-					<div className="error">
+					<div className="flex flex-col items-center justify-center gap-2 p-2 font-bold text-error">
 						<span>Error: {error}</span>
-						<button type="button" onClick={handleSubmit}>
+						<button
+							className="px-1 py-2 transition-all bg-transparent border rounded cursor-pointer border-error hover:bg-error hover:text-black"
+							type="button"
+							onClick={handleSubmit}
+						>
 							Try Again
 						</button>
 					</div>
 				)}
 				{loading && <Loading />}
 
-				<div className="clear-wrapper">
-					<button type="button" className="clear" onClick={handleClear} disabled={loading} title="Clear">
+				<div className="flex flex-row items-end justify-end">
+					<button
+						type="button"
+						className="flex items-center justify-center p-2 mt-1 text-2xl font-bold border-none rounded-lg text-hp-bg bg-error hover:text-white hover:bg-error"
+						onClick={handleClear}
+						disabled={loading}
+						title="Clear"
+					>
 						<FontAwesomeIcon icon={faBroomWide} />
 					</button>
 				</div>
