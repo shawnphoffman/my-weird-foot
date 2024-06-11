@@ -63,7 +63,7 @@
 	/* ================== */
 	/* LINKS */
 	/* ================== */
-	a {
+	a:not(:global(.embed)) {
 		@apply text-hp3 decoration-hp4 decoration-dashed underline-offset-2 hover:underline;
 	}
 }
