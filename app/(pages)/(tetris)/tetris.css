@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+::-webkit-scrollbar {
+	/* display: none; */
+}
+
+.piece-view {
+	border-collapse: collapse;
+}
+
+.game-block {
+	margin: 0;
+	padding: 0;
+	width: 2em;
+	height: 2em;
+	@apply border rounded-lg border-hp4/50;
+}
+.piece-i {
+	/* background-color: #ec858b; */
+	@apply bg-hp1;
+}
+.piece-j {
+	/* background-color: #f1b598; */
+	@apply bg-hp2;
+}
+.piece-l {
+	/* background-color: #f8efae; */
+	@apply bg-hp3;
+}
+.piece-o {
+	/* background-color: #b5a677; */
+	@apply bg-hp3/75;
+}
+.piece-s {
+	/* background-color: #816e56; */
+	@apply bg-hp2/75;
+}
+.piece-t {
+	/* background-color: #b77c72; */
+	@apply bg-hp1/75;
+}
+.piece-z {
+	/* background-color: #e3be58; */
+	@apply bg-hp4;
+}
+.piece-preview {
+	/* background-color: #eee; */
+	@apply bg-hp1/50;
+}

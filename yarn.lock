@@ -3835,6 +3835,11 @@ jsonp@^0.2.1:
     object.assign "^4.1.4"
     object.values "^1.1.6"
 
+keymaster@1.6.2:
+  version "1.6.2"
+  resolved "https://registry.yarnpkg.com/keymaster/-/keymaster-1.6.2.tgz#e1ae54d0ea9488f9f60b66b668f02e9a1946c6eb"
+  integrity sha512-OvA/AALN8IDKKkTk2Z+bDrzs/SQao4lo/QPbwSdDvm+frxfiYiYCSn1aHFUypJY3SruAO1y/c771agBmTXqUtg==
+
 language-subtag-registry@^0.3.20:
   version "0.3.22"
   resolved "https://registry.yarnpkg.com/language-subtag-registry/-/language-subtag-registry-0.3.22.tgz#2e1500861b2e457eba7e7ae86877cbd08fa1fd1d"
@@ -4745,6 +4750,13 @@ react-player@^2.16.0:
     memoize-one "^5.1.1"
     prop-types "^15.7.2"
     react-fast-compare "^3.0.1"
+
+react-tetris@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-tetris/-/react-tetris-0.4.0.tgz#fb4d209a08b4cadd98737d1fb0b30a9843c02377"
+  integrity sha512-HmQdCsBEY5aCMNJO1x6wAfGfQ1hPZ8idbrXkjfcBxIORx6KWAV/E+jEp7jUhN6rNuss93m9fslCTisZRnvP6xg==
+  dependencies:
+    keymaster "1.6.2"
 
 react@^18.3.1:
   version "18.3.1"
