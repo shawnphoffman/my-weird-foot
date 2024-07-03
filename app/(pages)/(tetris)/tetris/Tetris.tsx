@@ -1,6 +1,7 @@
 'use client'
 
-import Tetris from 'react-tetris'
+import dynamic from 'next/dynamic'
+const Tetris = dynamic(() => import('react-tetris'), { ssr: false })
 
 export default function TetrisComp() {
 	return (

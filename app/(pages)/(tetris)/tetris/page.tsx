@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 	},
 }
 
-export default async function TetrisPage() {
+export default function TetrisPage() {
 	return (
 		<div className="flex flex-row gap-4 max-w-screen-xl mx-auto my-0 w-full flex-1 bg-black rounded-2xl border-2 border-hp2 p-4 h-full max-[420px]:p-2">
 			<div className="flex flex-col justify-center flex-1 w-full text-white">
