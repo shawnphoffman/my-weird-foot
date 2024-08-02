@@ -1,14 +1,18 @@
+import { Suspense } from 'react'
 import type { Metadata, ResolvingMetadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import { siteTitle } from '@/app/data/meta'
 import PostAuthor from '@/components/updates/PostAuthor'
 import PostBody from '@/components/updates/PostBody'
+import PostComments from '@/components/updates/PostComments'
 import PostCoverImage from '@/components/updates/PostCoverImage'
 import PostTitle from '@/components/updates/PostTitle'
 import ShareButtons from '@/components/updates/ShareButtons'
 import { urlForSanityImage } from '@/sanity/sanity.image'
 import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
+
+import Loading from '../../loading'
 
 type PageProps = {
 	params: {
@@ -25,7 +29,7 @@ export default async function PostPage({ params }: PageProps) {
 		return notFound()
 	}
 
-	const { title, body = {}, mainImage, slug } = post
+	const { title, body = {}, mainImage, slug, commentsAtUrl } = post
 
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-4">
@@ -41,6 +45,10 @@ export default async function PostPage({ params }: PageProps) {
 			<article className="w-full pb-4 text-left rounded-lg bg-zinc-950/75">
 				<PostBody content={body} />
 			</article>
+
+			<Suspense fallback={<Loading />}>
+				<PostComments url={commentsAtUrl} />
+			</Suspense>
 		</div>
 	)
 }
