@@ -1,7 +1,7 @@
 import { Suspense } from 'react'
 
 import items from '@/app/data/links'
-import Awards from '@/components/core/Awards'
+import Awards from '@/components/core/AwardsScrape'
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
 import RatingsApple from '@/components/core/RatingsApple'
