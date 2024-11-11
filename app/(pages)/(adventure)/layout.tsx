@@ -7,6 +7,8 @@ import Link from 'next/link'
 
 import adventureLogo from './adventure.png'
 
+// TODO https://github.com/nostalgic-css/NES.css
+
 export default async function AdventureLayout({ children }) {
 	return (
 		<html className="bg-hp-bg !bg-gradient-to-b from-hp-bg to-black">
