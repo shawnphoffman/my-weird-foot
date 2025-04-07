@@ -1,4 +1,9 @@
-import { faDiscord, faSpotify, faTwitch, faXTwitter } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/brands'
+import {
+	faDiscord,
+	faSpotify,
+	faTwitch,
+	// faXTwitter
+} from '@awesome.me/kit-d7ccc5bb1a/icons/classic/brands'
 import { faRssSquare, faSnake } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { faAt, faPodcast } from '@awesome.me/kit-d7ccc5bb1a/icons/duotone/solid'
 import { faCastbox, faGoodpods, faOvercast, faTeepublic } from '@awesome.me/kit-d7ccc5bb1a/icons/kit/custom'
@@ -21,12 +26,12 @@ type Link = {
 }
 
 const items: Link[] = [
-	{
-		title: 'Twitter',
-		href: 'https://twitter.com/HighPotionPod',
-		background: 'bg-twitter',
-		icon: faXTwitter,
-	},
+	// {
+	// 	title: 'Twitter',
+	// 	href: 'https://twitter.com/HighPotionPod',
+	// 	background: 'bg-twitter',
+	// 	icon: faXTwitter,
+	// },
 	{
 		title: 'Spotify',
 		href: spotifyUrl,

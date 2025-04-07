@@ -15,7 +15,8 @@ export const submitMessage = async (messages, prompt) => {
 		const newMessages = (messages.length > 6 ? [...messages.slice(-6), prompt] : [...messages, prompt]).map(({ id, ...rest }) => rest)
 
 		const data = await openai.chat.completions.create({
-			model: 'gpt-3.5-turbo',
+			// model: 'gpt-3.5-turbo',
+			model: 'gpt-4o-mini',
 			messages: newMessages,
 			// temperature: 1,
 			// max_tokens: 256,
