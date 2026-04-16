@@ -10,6 +10,7 @@ import { applePodcastId } from '@/app/data/links'
 import { siteDescription, siteTitle, siteUrl } from '@/app/data/meta'
 import highPotionLogo from '@/app/images/high-potion.png'
 import ActiveLink from '@/components/core/ActiveLink'
+import SiteBanner from '@/components/core/SiteBanner'
 
 const openSans = Open_Sans({ subsets: ['latin'] })
 
@@ -38,10 +39,11 @@ export const metadata: Metadata = {
 
 export default async function PotionLayout({ children }) {
 	return (
-		<html lang="en" className={`${openSans.className} bg-hp-bg !bg-gradient-to-b from-hp-bg to-black p-0 m-0 overflow-x-hidden w-dvw`}>
-			<body className="p-4 mx-auto my-0 text-white bg-none min-h-dvh w-dvw">
+		<html lang="en" className={`${openSans.className} bg-hp-bg  p-0 m-0 overflow-x-hidden w-dvw`}>
+			<body className="p-0 mx-auto my-0 text-white min-h-dvh w-dvw !bg-gradient-to-b from-hp-bg to-black">
+				<SiteBanner />
 				{/* // WRAPPER */}
-				<div className="flex flex-col items-center w-full max-w-screen-xl mx-auto">
+				<div className="flex flex-col items-center w-full max-w-screen-xl p-4 mx-auto ">
 					<div className="flex flex-col w-full max-w-4xl gap-2">
 						{/* HEADER */}
 						<div className="flex flex-col items-center gap-0 text-center">
