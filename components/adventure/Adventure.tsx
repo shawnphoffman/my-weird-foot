@@ -181,7 +181,7 @@ function Adventure({
 					passRef={inputRef}
 				/>
 			</div>
-			<div className="hidden md:block md:shrink-0">
+			<div className="hidden md:block md:shrink-0 md:mt-4">
 				<GameStatePanel state={gameState} />
 			</div>
 			<dialog

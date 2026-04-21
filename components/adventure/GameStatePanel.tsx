@@ -27,7 +27,7 @@ export default function GameStatePanel({ state }: { state: GameState }) {
 	const { turn, location, party, inventory, objective, knownLocations, gameOver } = state
 
 	return (
-		<aside className="flex flex-col gap-4 p-4 bg-black/40 border border-hp1 rounded-xl text-white text-sm md:w-72 md:shrink-0">
+		<aside className="flex flex-col gap-4 p-4 bg-black/40 border border-hp1 rounded-xl text-white text-sm md:w-72 md:shrink-0 md:h-full">
 			<header className="flex items-baseline justify-between pb-2 border-b border-hp1">
 				<h2 className="text-hp3 font-bold uppercase tracking-widest text-xs">Status</h2>
 				<span className="text-hp4 font-mono text-xs">Turn {turn}</span>
