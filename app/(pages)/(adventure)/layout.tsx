@@ -15,9 +15,9 @@ export default async function AdventureLayout({ children }) {
 			<body className="px-4">
 				<div className={`${GeistMono.className} flex flex-col items-center max-w-screen-xl w-full mx-auto h-dvh`}>
 					<Link className="flex flex-col items-center text-center" href="/home">
-						<Image className="w-full h-auto my-1 max-w-96" alt="High Potion" src={adventureLogo} width={192} priority />
+						<Image className="w-full h-auto my-1 max-w-[150px]" alt="High Potion" src={adventureLogo} width={192} priority />
 					</Link>
-					<div className="flex flex-col items-center flex-1 w-full mb-4 overflow-hidden text-center h-100">{children}</div>
+					<div className="flex flex-col items-center flex-1 w-full mb-4 overflow-hidden text-center">{children}</div>
 				</div>
 			</body>
 		</html>

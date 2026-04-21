@@ -14,7 +14,7 @@ export default function Input({ value, onChange, onClick, disabled, passRef }) {
 		<div className="flex flex-row justify-stretch h-16 rounded-2xl bg-black border-2 border-dashed border-hp3 overflow-hidden max-[420px]:h-12">
 			<input
 				ref={passRef}
-				className="border-none outline-none bg-transparent p-4 text-white flex-1 font-bold text-2xl caret-hp4 w-full max-[420px]:font-base max-[420px]:p-2"
+				className="border-none outline-none bg-transparent p-4 text-white flex-1 font-bold text-base caret-hp4 w-full max-[420px]:font-base max-[420px]:p-2"
 				disabled={disabled}
 				placeholder={disabled ? 'Loading...' : 'Enter your next step...'}
 				value={value}
