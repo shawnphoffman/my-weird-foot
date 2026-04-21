@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 import Adventure from '@/components/adventure/Adventure'
-import { INITIAL_GAME_STATE, type AdventureUIMessage } from '@/components/adventure/types'
+import { type AdventureUIMessage,INITIAL_GAME_STATE } from '@/components/adventure/types'
 
 export const metadata: Metadata = {
 	title: 'High Potion',

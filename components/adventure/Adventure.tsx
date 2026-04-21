@@ -1,9 +1,9 @@
 'use client'
 
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useChat } from '@ai-sdk/react'
 import { faBroomWide, faChartSimple, faXmark } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useChat } from '@ai-sdk/react'
 import * as Sentry from '@sentry/nextjs'
 import { DefaultChatTransport } from 'ai'
 

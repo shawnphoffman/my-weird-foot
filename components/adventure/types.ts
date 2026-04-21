@@ -1,6 +1,6 @@
-import { z } from 'zod'
 import type { InferUITools, UIMessage } from 'ai'
 import { tool } from 'ai'
+import { z } from 'zod'
 
 export const gameStateSchema = z.object({
 	turn: z.number().int().min(1).describe('Current turn number, increments by 1 each turn.'),
