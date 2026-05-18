@@ -1,4 +1,3 @@
-import * as Sentry from '@sentry/nextjs'
 import { convertToModelMessages, stepCountIs, streamText } from 'ai'
 
 import { adventureTools, type AdventureUIMessage } from '@/components/adventure/types'
@@ -93,13 +92,13 @@ export async function POST(req: Request) {
 
 		return result.toUIMessageStreamResponse({
 			onError: error => {
-				Sentry.captureException(error)
+				console.error(error)
 				if (error instanceof Error) return error.message
 				return 'Something went wrong. Please try again.'
 			},
 		})
 	} catch (error) {
-		Sentry.captureException(error)
+		console.error(error)
 		return new Response(JSON.stringify({ error: 'Failed to process request' }), {
 			status: 500,
 			headers: { 'content-type': 'application/json' },
