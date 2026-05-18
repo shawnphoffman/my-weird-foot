@@ -4,7 +4,6 @@ import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useChat } from '@ai-sdk/react'
 import { faBroomWide, faChartSimple, faXmark } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import * as Sentry from '@sentry/nextjs'
 import { DefaultChatTransport } from 'ai'
 
 import GameStatePanel from '@/components/adventure/GameStatePanel'
@@ -45,7 +44,7 @@ function Adventure({
 	const { messages, sendMessage, status, error, stop, regenerate, setMessages } = useChat<AdventureUIMessage>({
 		transport: new DefaultChatTransport({ api: '/api/adventure' }),
 		messages: initialMessages,
-		onError: err => Sentry.captureException(err),
+		onError: err => console.error(err),
 	})
 
 	useEffect(() => {
@@ -60,7 +59,7 @@ function Adventure({
 				}
 			}
 		} catch (err) {
-			Sentry.captureException(err)
+			console.error(err)
 		}
 	}, [setMessages])
 
@@ -70,7 +69,7 @@ function Adventure({
 		try {
 			window.localStorage.setItem(storageKey, JSON.stringify(messages))
 		} catch (err) {
-			Sentry.captureException(err)
+			console.error(err)
 		}
 	}, [messages, status])
 
@@ -106,7 +105,7 @@ function Adventure({
 		try {
 			window.localStorage.removeItem(storageKey)
 		} catch (err) {
-			Sentry.captureException(err)
+			console.error(err)
 		}
 	}, [initialMessages, setMessages])
 

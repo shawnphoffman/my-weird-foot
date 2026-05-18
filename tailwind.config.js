@@ -61,5 +61,5 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [tailwindColors.default],
+	plugins: [],
 }
