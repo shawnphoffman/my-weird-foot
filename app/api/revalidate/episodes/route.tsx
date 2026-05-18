@@ -3,7 +3,7 @@ import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
 	console.log('Revalidating "episodes" tag')
-	revalidateTag('episodes')
+	revalidateTag('episodes', 'max')
 
 	const searchParams = request.nextUrl.searchParams
 	const force = searchParams.get('force')

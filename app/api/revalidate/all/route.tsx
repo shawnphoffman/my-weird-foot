@@ -8,7 +8,7 @@ export async function GET(request: NextRequest) {
 
 	console.log(`Revalidating "${type}" tag`)
 	if (type) {
-		revalidateTag(type)
+		revalidateTag(type, 'max')
 	}
 
 	if (path) {

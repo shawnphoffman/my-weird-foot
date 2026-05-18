@@ -5,7 +5,7 @@ import { NextRequest } from 'next/server'
 
 export async function GET(request: NextRequest) {
 	console.log('Revalidating "patreon" tag')
-	revalidateTag('patreon')
+	revalidateTag('patreon', 'max')
 
 	const searchParams = request.nextUrl.searchParams
 	const force = searchParams.get('force')
