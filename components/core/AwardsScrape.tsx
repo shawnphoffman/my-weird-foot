@@ -20,7 +20,7 @@ type AwardsResponse = {
 
 export async function getAwards() {
 	try {
-		const res = await fetch(`https://api.shawn.party/api/pod-data/goodpods-scrape?url=${goodpodsUrl}`, {
+		const res = await fetch(`https://api.shawn.party/api/podcast-data/goodpods-scrape?url=${goodpodsUrl}`, {
 			next: { revalidate: 3600 },
 			// next: { revalidate: 360 },
 		})
