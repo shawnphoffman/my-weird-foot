@@ -1,12 +1,11 @@
+import { faStarSharp } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
+import { AwardsScrape, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
 import { Suspense } from 'react'
 
-import items from '@/app/data/links'
-import Awards from '@/components/core/AwardsScrape'
+import { getAppleReviews, getSpotifyReviews } from '@/app/data/actions'
+import items, { appleRatingUrl, goodpodsUrl, spotifyUrl } from '@/app/data/links'
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
-import RatingsApple from '@/components/core/RatingsApple'
-import RatingsGoodpods from '@/components/core/RatingsGoodpods'
-import RatingsSpotify from '@/components/core/RatingsSpotify'
 import Reviews from '@/components/core/Reviews'
 
 export default async function HighPotionHome() {
@@ -19,9 +18,9 @@ export default async function HighPotionHome() {
 
 			<div className="flex flex-row flex-wrap items-center justify-center gap-2">
 				<Suspense fallback="">
-					<RatingsApple />
-					<RatingsGoodpods />
-					<RatingsSpotify />
+					<RatingsApple appleRatingUrl={appleRatingUrl} getReviews={getAppleReviews} starIcon={faStarSharp} />
+					<RatingsGoodpods goodpodsUrl={goodpodsUrl} starIcon={faStarSharp} />
+					<RatingsSpotify spotifyUrl={spotifyUrl} getReviews={getSpotifyReviews} starIcon={faStarSharp} />
 				</Suspense>
 			</div>
 
@@ -41,7 +40,7 @@ export default async function HighPotionHome() {
 			</div>
 
 			<Suspense>
-				<Awards />
+				<AwardsScrape goodpodsUrl={goodpodsUrl} />
 			</Suspense>
 
 			<Suspense fallback={<Loading />}>
