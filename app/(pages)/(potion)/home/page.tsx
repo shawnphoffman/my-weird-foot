@@ -1,5 +1,5 @@
 import { faStarSharp } from '@awesome.me/kit-d7ccc5bb1a/icons/classic/solid'
-import { AwardsScrape, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
+import { Awards, RatingsApple, RatingsGoodpods, RatingsSpotify } from '@shawnphoffman/pod-sites-shared/ratings'
 import { Suspense } from 'react'
 
 import { getAppleReviews, getSpotifyReviews } from '@/app/data/actions'
@@ -7,6 +7,7 @@ import items, { appleRatingUrl, goodpodsUrl, spotifyUrl } from '@/app/data/links
 import LinkCard from '@/components/core/LinkCard'
 import Loading from '@/components/core/Loading'
 import Reviews from '@/components/core/Reviews'
+import { getAwards } from '@/sanity/sanity.requests'
 
 export default async function HighPotionHome() {
 	return (
@@ -40,7 +41,7 @@ export default async function HighPotionHome() {
 			</div>
 
 			<Suspense>
-				<AwardsScrape goodpodsUrl={goodpodsUrl} />
+				<Awards getAwards={getAwards} />
 			</Suspense>
 
 			<Suspense fallback={<Loading />}>
