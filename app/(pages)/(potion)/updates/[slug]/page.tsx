@@ -15,12 +15,13 @@ import { getAllPostsSlugs, getPostBySlug } from '@/sanity/sanity.requests'
 import Loading from '../../loading'
 
 type PageProps = {
-	params: {
+	params: Promise<{
 		slug: string
-	}
+	}>
 }
 
-export default async function PostPage({ params }: PageProps) {
+export default async function PostPage(props: PageProps) {
+	const params = await props.params
 	const post = await getPostBySlug(params?.slug || '')
 
 	// console.log(post)
@@ -58,7 +59,8 @@ export async function generateStaticParams() {
 	return slugs
 }
 
-export async function generateMetadata({ params }: PageProps, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata(props: PageProps, parent: ResolvingMetadata): Promise<Metadata> {
+	const params = await props.params
 	const post = await getPostBySlug(params?.slug || '')
 	if (!post) return {}
 
