@@ -1,12 +1,26 @@
 import { Suspense } from 'react'
 import { PortableText, type PortableTextReactComponents } from '@portabletext/react'
+import { PredictionGrid, type Prediction, type PredictionsTheme } from '@shawnphoffman/pod-sites-shared/components'
+
+import { urlForSanityImage } from '@/sanity/sanity.image'
 
 import PostImage from './portableText/PostImage'
 import UrlEmbed from './portableText/UrlEmbed'
 import YoutubeEmbed from './portableText/YoutubeEmbed'
 import styles from './PostBody.module.css'
 
-const myPortableTextComponents: Partial<PortableTextReactComponents> = {
+const predictionsTheme: PredictionsTheme = {
+	accentBar: 'bg-hp4',
+	cardTitle: 'text-hp4',
+	summaryTitle: 'text-hp4',
+	winnerRing: 'ring-hp4/60',
+	winnerBg: 'bg-hp4/10',
+	winnerText: 'text-hp4',
+	winnerIcon: 'text-hp4',
+}
+
+function buildComponents(predictions?: Prediction[] | null): Partial<PortableTextReactComponents> {
+	return {
 	marks: {
 		textRed: ({ children }) => {
 			return <span className="text-red-500">{children}</span>
@@ -48,18 +62,38 @@ const myPortableTextComponents: Partial<PortableTextReactComponents> = {
 				</div>
 			)
 		},
+		predictionsMarker: () => {
+			if (!predictions?.length) return null
+			return (
+				<div className="my-6 not-prose">
+					<PredictionGrid predictions={predictions} theme={predictionsTheme} urlForImage={urlForSanityImage} />
+				</div>
+			)
+		},
 	},
 }
+}
 
-// const onMissingComponent = (type: any) => {
-// 	console.error('Missing component:', type)
-// 	return null
-// }
+function hasMarker(content: any[] | undefined | null): boolean {
+	return Array.isArray(content) && content.some(b => b?._type === 'predictionsMarker')
+}
 
-export default function PostBody({ content }) {
+type PostBodyProps = {
+	content: any
+	predictions?: Prediction[] | null
+}
+
+export default function PostBody({ content, predictions }: PostBodyProps) {
+	const components = buildComponents(predictions)
+	const showAppendedGrid = !hasMarker(content) && Boolean(predictions?.length)
 	return (
 		<div className={`mx-auto max-w-3xl ${styles.portableText}`}>
-			<PortableText value={content} components={myPortableTextComponents} />
+			<PortableText value={content} components={components} />
+			{showAppendedGrid ? (
+				<div className="mt-6 not-prose">
+					<PredictionGrid predictions={predictions!} theme={predictionsTheme} urlForImage={urlForSanityImage} />
+				</div>
+			) : null}
 		</div>
 	)
 }
